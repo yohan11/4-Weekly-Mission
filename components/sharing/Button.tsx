@@ -22,47 +22,24 @@ const Icon = styled.button`
 
 const Text = styled.button`
   ${buttonStyle};
-  //width: 100px;
-  //height: 31px;
-  //padding: 7px 12px 7px 12px;
-  //
-  //background: none;
-  //font-size: 14px;
-  //font-weight: 400;
-  //
-  //&:hover {
-  //  background-color: var(--color-background);
-  //  color: var(--color-primary);
-  //}
 `;
 
-interface Props {
+const BUTTON_COMPONENTS = {
+    gradient: GradientButton,
+    icon: Icon,
+    text: Text,
+};
+
+interface ButtonProps {
     children: ReactNode;
     className?: string;
     variant: "gradient" | "icon" | "text";
     onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-const Button = ({children, className, variant, onClick}: Props) => {
-    if (variant === "gradient")
-        return (
-            <GradientButton className={className} onClick={onClick}>
-                {children}
-            </GradientButton>
-        );
-    if (variant === "icon")
-        return (
-            <Icon onClick={onClick} className={className}>
-                {children}
-            </Icon>
-        );
-    if (variant === "text")
-        return (
-            <Text className={className} onClick={onClick}>
-                {children}
-            </Text>
-        );
-    return null;
+const Button = ({variant, ...props}: ButtonProps) => {
+    const Component = BUTTON_COMPONENTS[variant] || null;
+    return Component ? <Component {...props} /> : null;
 };
 
 export default Button;

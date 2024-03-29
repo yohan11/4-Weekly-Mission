@@ -8,15 +8,15 @@ import Button from "@/components/sharing/Button";
 import * as Icons from "@/components/sharing/Icons";
 import ModalButton from "@/components/sharing/modal/ModalButton";
 import SocialIcons from "@/components/sharing/modal/SocialIcons";
+import media from "@/styles/mediaSize.js";
 
 const IconsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  @media (min-width: 375px) and (max-width: 767px) {
-    justify-content: left;
-  }
+
+  ${media.mobile`justify-content: left;`}
 `;
 
 const ActionIcon = styled(Button)`
@@ -64,7 +64,7 @@ const Actions = () => {
                 </ActionIcon>
             </IconsContainer>
 
-            {openModal && (
+            {openModal ? (
                 <ModalContainer onClick={handleModalClose}>
                     {action === "share" ? (
                         <>
@@ -86,7 +86,7 @@ const Actions = () => {
                         </>
                     ) : null}
                 </ModalContainer>
-            )}
+            ) : null}
         </>
     );
 };

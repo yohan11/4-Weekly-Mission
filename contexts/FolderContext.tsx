@@ -1,5 +1,5 @@
 // 현재 선택된 폴더의 상태를 관리
-import React, {createContext, ReactNode, useContext, useState} from "react";
+import React, {createContext, ReactNode, useContext, useMemo, useState} from "react";
 
 type Folder = {
     id: number;
@@ -26,8 +26,10 @@ export const FolderProvider = ({children}: { children: ReactNode }) => {
         name: "전체",
     });
 
+    const value = useMemo(() => ({currentFolder, setCurrentFolder}), [currentFolder]);
+
     return (
-        <FolderContext.Provider value={{currentFolder, setCurrentFolder}}>
+        <FolderContext.Provider value={value}>
             {children}
         </FolderContext.Provider>
     );

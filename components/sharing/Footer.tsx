@@ -2,6 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import * as Icons from "@/components/sharing/Icons";
 import Button from "@/components/sharing/Button";
+import media from "@/styles/mediaSize.js";
 
 const FooterContainer = styled.footer`
   background-color: var(--color-black);
@@ -11,23 +12,23 @@ const FooterContainer = styled.footer`
   display: flex;
   justify-content: space-between;
 
-  @media (min-width: 375px) and (max-width: 767px) {
+  ${media.mobile`
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
     padding: 32px;
-  }
+  `}
 `;
 
 const CopyrightText = styled.div`
   color: #676767;
 
-  @media (min-width: 375px) and (max-width: 767px) {
+  ${media.mobile`
     display: flex;
     justify-content: flex-start;
 
     grid-row: 2;
     margin-top: 24px;
-  }
+  `}
 `;
 
 const CSText = styled.div`
@@ -39,9 +40,7 @@ const CSText = styled.div`
 
 const IconContainer = styled.div`
   display: flex;
-  @media (min-width: 375px) and (max-width: 767px) {
-    justify-content: flex-end;
-  }
+  ${media.mobile`justify-content: flex-end;`}
 `;
 
 const Footer = () => {

@@ -40,12 +40,12 @@ const CloseButton = styled(Button)`
   right: 15px;
 `;
 
-interface Props {
+interface ModalProps {
     children: ReactNode;
     onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
-function Modal({children, onClick}: Props) {
+function Modal({children, onClick}: ModalProps) {
     return (
         <Background>
             <ModalContainer>

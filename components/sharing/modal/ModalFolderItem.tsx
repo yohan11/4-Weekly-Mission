@@ -43,13 +43,13 @@ const CheckIcon = styled.img`
   right: 8px;
 `;
 
-interface Props {
+interface ModalFolderItemProps {
     folder: Folder;
     selected: boolean;
     onClick: MouseEventHandler<HTMLElement>;
 }
 
-function ModalFolderItem({folder, selected, onClick}: Props) {
+function ModalFolderItem({folder, selected, onClick}: ModalFolderItemProps) {
     const {name, link} = folder;
 
     return selected ? (

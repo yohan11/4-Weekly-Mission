@@ -2,6 +2,7 @@ import React from "react";
 import Avatar from "@/components/sharing/user/Avatar";
 import styled from "styled-components";
 import {User} from "@/utils/types";
+import media from "@/styles/mediaSize.js";
 
 const ProfileContainer = styled.div`
   display: flex;
@@ -10,18 +11,16 @@ const ProfileContainer = styled.div`
 `;
 
 const ProfileText = styled.span`
-  @media (min-width: 375px) and (max-width: 767px) {
-    display: none;
-  }
+  ${media.mobile`display: none;`}
 `;
 
-interface Props {
+interface UserProfileProps {
     userInfo: User;
     className?: string;
     size?: string;
 }
 
-const UserProfile = ({userInfo, className, size}: Props) => {
+const UserProfile = ({userInfo, className, size}: UserProfileProps) => {
     const avatarImage = userInfo["image_source"] || undefined;
 
     return (

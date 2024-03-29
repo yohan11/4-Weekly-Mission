@@ -8,11 +8,8 @@ import * as Icons from "@/components/sharing/Icons";
 import ModalButton from "@/components/sharing/modal/ModalButton";
 import ModalFolderList from "@/components/sharing/modal/ModalFolderList";
 
-interface Props {
-    linkUrl: string;
-}
 
-const Kebab = ({linkUrl}: Props) => {
+const Kebab = ({linkUrl}: { linkUrl: string }) => {
     const {openModal, handleModalOpen, handleModalClose} = useModal();
     const [openPopover, setOpenPopover] = useState(false);
     const [action, setAction] = useState("");
@@ -51,7 +48,7 @@ const Kebab = ({linkUrl}: Props) => {
                 </Button>
             </Popover>
 
-            {openModal && (
+            {openModal ? (
                 <ModalContainer onClick={handleModalClose}>
                     {action === "deleteLink" ? (
                         <>
@@ -84,7 +81,7 @@ const Kebab = ({linkUrl}: Props) => {
                         </>
                     ) : null}
                 </ModalContainer>
-            )}
+            ) : null}
         </>
     );
 };

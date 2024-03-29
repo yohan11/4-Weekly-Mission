@@ -78,7 +78,7 @@ const StarButton = styled(Button)`
   opacity: 0.7;
 `;
 
-interface Props {
+interface CardProps {
     id: number;
     cardImage?: string;
     cardTime: {
@@ -89,7 +89,7 @@ interface Props {
     cardUrl: string;
 }
 
-const Card = ({id, cardImage, cardTime, cardDescription, cardUrl}: Props) => {
+const Card = ({id, cardImage, cardTime, cardDescription, cardUrl}: CardProps) => {
     const imageSrc = cardImage || SAMPLE_IMAGE_URL;
 
     return (

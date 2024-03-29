@@ -40,7 +40,7 @@ const TagList = () => {
             >
                 전체
             </Tag>
-            {folders.length !== 0 &&
+            {folders.length !== 0 ?
                 folders.map((folder) => {
                     return (
                         <Tag
@@ -53,7 +53,7 @@ const TagList = () => {
                             {folder["name"]}
                         </Tag>
                     );
-                })}
+                }) : null}
         </TagListContainer>
     );
 };

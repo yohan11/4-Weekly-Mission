@@ -3,12 +3,13 @@ import styled from "styled-components";
 import UserProfile from "@/components/sharing/user/UserProfile";
 import {User} from "@/utils/types";
 import Link from "next/link";
+import media from "@/styles/mediaSize.js";
 
-type HeaderProps = {
+type HeaderStyledProps = {
     $fixed: boolean;
 };
 
-const HeaderContainer = styled.header<HeaderProps>`
+const HeaderContainer = styled.header<HeaderStyledProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,22 +25,16 @@ const HeaderContainer = styled.header<HeaderProps>`
 
   background-color: var(--color-background);
 
-  /*태블릿 사이즈*/
-  @media (min-width: 768px) and (max-width: 1199px) {
-    padding: 30px 32px;
-  }
-  /*모바일 사이즈*/
-  @media (min-width: 375px) and (max-width: 767px) {
-    padding: 30px 32px;
-  }
+  ${media.tablet`padding: 30px 32px;`}
+  ${media.mobile`padding: 30px 32px;`}
 `;
 
-interface Props {
+interface HeaderProps {
     userInfo: User;
     fixed: boolean;
 }
 
-const Header = ({userInfo, fixed}: Props) => {
+const Header = ({userInfo, fixed}: HeaderProps) => {
     return (
         <HeaderContainer $fixed={fixed}>
             <Link href="/">

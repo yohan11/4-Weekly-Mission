@@ -77,11 +77,11 @@ const SearchInputForm = () => {
                 onKeyDown={(e: React.KeyboardEvent) => handleSubmit(e)}
             />
 
-            {searchKeyword && (
+            {searchKeyword ? (
                 <StyledIconButton variant="icon" onClick={deleteKeyword}>
                     <Icons.Close/>
                 </StyledIconButton>
-            )}
+            ) : null}
         </SearchInputFormContainer>
     );
 };

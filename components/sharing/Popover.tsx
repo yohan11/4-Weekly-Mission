@@ -1,11 +1,11 @@
 import React, {ReactNode} from "react";
 import styled from "styled-components";
 
-type PopoverProps = {
+type PopoverStyledProps = {
     $isOpen: boolean;
 };
 
-const PopoverContainer = styled.div<PopoverProps>`
+const PopoverContainer = styled.div<PopoverStyledProps>`
   display: ${({$isOpen}) => ($isOpen ? "flex" : "none")};
   flex-direction: column;
   gap: 2px;
@@ -22,12 +22,12 @@ const PopoverContainer = styled.div<PopoverProps>`
   box-shadow: 0px 2px 8px 0px #3332361a;
 `;
 
-interface Props {
+interface PopoverProps {
     children: ReactNode;
     isOpen: boolean;
 }
 
-const Popover = ({children, isOpen}: Props) => {
+const Popover = ({children, isOpen}: PopoverProps) => {
     return <PopoverContainer $isOpen={isOpen}>{children}</PopoverContainer>;
 };
 

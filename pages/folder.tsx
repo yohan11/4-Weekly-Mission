@@ -17,6 +17,7 @@ import Header from "@/components/sharing/Header";
 import Button from "@/components/sharing/Button";
 import styled from "styled-components";
 import {useRouter} from "next/router";
+import media from "@/styles/mediaSize.js";
 
 const AddFolderButton = styled(Button)`
   display: flex;
@@ -29,7 +30,8 @@ const AddFolderButton = styled(Button)`
   white-space: nowrap;
   cursor: pointer;
   background: none;
-  @media (min-width: 375px) and (max-width: 767px) {
+
+  ${media.mobile`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,15 +47,16 @@ const AddFolderButton = styled(Button)`
     border-radius: 20px;
     background-color: var(--color-primary);
     color: white;
-  }
+    `}
 `;
 
 const SearchMessage = styled.h1`
   margin: 0;
-  @media (min-width: 375px) and (max-width: 767px) {
-    font-size: 24px;
-  }
+  ${media.mobile`
+   font-size: 24px;
+  `}
 `;
+
 const Folder = () => {
     const [user, setUser] = useState({email: null, profileImageSource: null});
     const {openModal, handleModalOpen, handleModalClose} = useModal();
@@ -66,7 +69,7 @@ const Folder = () => {
         if (!email) return;
         setUser({email: email, profileImageSource: profileImageSource});
     };
-    
+
     useEffect(() => {
         loadUser();
     }, []);
@@ -80,12 +83,12 @@ const Folder = () => {
             <MainLayout>
                 <SearchInputForm/>
 
-                {searchParam && (
+                {searchParam ? (
                     <SearchMessage>
                         {searchParam}
                         <span className="font-color-gray4">으로 검색한 결과입니다.</span>
                     </SearchMessage>
-                )}
+                ) : null}
 
                 <div className="space-between">
                     <TagList/>
@@ -95,20 +98,20 @@ const Folder = () => {
                 </div>
                 <div className="space-between">
                     <span className="font-24px font-regular">{currentFolder.name}</span>
-                    {currentFolder.id !== 1 && <Actions/>}
+                    {currentFolder.id !== 1 ? <Actions/> : null}
                 </div>
 
                 <CardList/>
             </MainLayout>
             <Footer/>
 
-            {openModal && (
+            {openModal ? (
                 <ModalContainer onClick={handleModalClose}>
                     <Modal.Title>폴더 추가</Modal.Title>
                     <Modal.Input placeholder="내용 입력"/>
                     <ModalButton buttonStyle="blue">추가하기</ModalButton>
                 </ModalContainer>
-            )}
+            ) : null}
         </>
     );
 };

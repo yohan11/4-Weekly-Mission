@@ -1,10 +1,10 @@
 import React, {MouseEventHandler, ReactNode} from "react";
 import styled from "styled-components";
 
-type ModalButtonProps = {
+type ModalButtonStyledProps = {
     $buttonStyle: "red" | "blue";
 };
-const StyledButton = styled.button<ModalButtonProps>`
+const StyledButton = styled.button<ModalButtonStyledProps>`
   width: 280px;
   padding: 16px 20px;
   border-radius: 8px;
@@ -19,13 +19,13 @@ const StyledButton = styled.button<ModalButtonProps>`
   cursor: pointer;
 `;
 
-interface Props {
+interface ModalButtonProps {
     children: ReactNode;
     buttonStyle: "red" | "blue";
     onClick?: MouseEventHandler<HTMLElement>;
 }
 
-function ModalButton({children, buttonStyle, onClick}: Props) {
+function ModalButton({children, buttonStyle, onClick}: ModalButtonProps) {
     return (
         <StyledButton onClick={onClick} $buttonStyle={buttonStyle}>
             {children}

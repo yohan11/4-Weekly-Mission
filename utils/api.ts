@@ -83,10 +83,10 @@ export const getLinksByKeyword = async (
 
         return data.data.filter(
             (item: Data) =>
-                (item.description &&
-                    item.description.toLowerCase().includes(loweredKeyword)) ||
-                (item.title && item.title.toLowerCase().includes(loweredKeyword)) ||
-                (item.url && item.url.toLowerCase().includes(loweredKeyword)),
+                (item.description ?
+                    item.description.toLowerCase().includes(loweredKeyword) : '') ||
+                (item.title ? item.title.toLowerCase().includes(loweredKeyword) : '') ||
+                (item.url ? item.url.toLowerCase().includes(loweredKeyword) : ''),
         );
     }
 };
