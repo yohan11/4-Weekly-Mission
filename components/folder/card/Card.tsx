@@ -10,6 +10,7 @@ const SAMPLE_IMAGE_URL = "/images/default_card.svg";
 const CardContainer = styled.div`
   width: 100%;
   height: auto;
+  position: relative;
 
   box-shadow: 0 5px 25px 0 #00000014;
   border-radius: 15px;
@@ -108,9 +109,9 @@ const Card = ({id, cardImage, cardTime, cardDescription, cardUrl}: CardProps) =>
             </Link>
             <TextContainer>
                 <OptionContainer>
-          <span className="font-thin font-13px" style={{color: "#666666"}}>
-            {cardTime["timeDifference"]}
-          </span>
+                  <span className="font-thin font-13px" style={{color: "#666666"}}>
+                    {cardTime["timeDifference"]}
+                  </span>
                     <Kebab linkUrl={cardUrl}/>
                 </OptionContainer>
                 <Contents>{cardDescription}</Contents>
@@ -118,6 +119,7 @@ const Card = ({id, cardImage, cardTime, cardDescription, cardUrl}: CardProps) =>
                     {cardTime["createdDateString"]}
                 </div>
             </TextContainer>
+
         </CardContainer>
     );
 };

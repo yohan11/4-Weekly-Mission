@@ -22,6 +22,18 @@ const Icon = styled.button`
 
 const Text = styled.button`
   ${buttonStyle};
+  width: 100px;
+  height: 31px;
+  padding: 7px 12px 7px 12px;
+
+  background: none;
+  font-size: 14px;
+  font-weight: 400;
+
+  &:hover {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+  }
 `;
 
 const BUTTON_COMPONENTS = {

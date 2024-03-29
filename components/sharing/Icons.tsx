@@ -65,6 +65,7 @@ export const Star = styled.div`
 export const Kebab = styled.div`
   background: url("/icons/kebab.svg") no-repeat;
   width: 21px;
+  height: 17px;
 `;
 
 export const ShareKakao = styled.div`

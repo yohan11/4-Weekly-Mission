@@ -19,7 +19,7 @@ const PopoverContainer = styled.div<PopoverStyledProps>`
   top: 100%;
   z-index: 1;
 
-  box-shadow: 0px 2px 8px 0px #3332361a;
+  box-shadow: 0 2px 8px 0 #3332361a;
 `;
 
 interface PopoverProps {
