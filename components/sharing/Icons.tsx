@@ -93,3 +93,21 @@ export const EyeOn = styled.div`
   width: 16px;
   height: 10.91px;
 `;
+
+export const Search = styled.div`
+  background: url("/icons/search.svg") no-repeat;
+  width: 16px;
+  height: 16px;
+`;
+
+export const Check = styled.div`
+  background: url("/icons/check.svg") no-repeat;
+  width: 13px;
+  height: 11px;
+`;
+
+export const Link = styled.div`
+  background: url("/icons/link.svg") no-repeat;
+  width: 20px;
+  height: 21px;
+`;

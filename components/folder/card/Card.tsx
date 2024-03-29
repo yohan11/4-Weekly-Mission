@@ -3,6 +3,7 @@ import Link from "next/link";
 import Button from "@/components/sharing/Button";
 import * as Icons from "@/components/sharing/Icons";
 import Kebab from "@/components/sharing/Kebab";
+import Image from "next/image";
 
 const SAMPLE_IMAGE_URL = "/images/default_card.svg";
 
@@ -25,9 +26,7 @@ const ImageContainer = styled.div`
   overflow: hidden;
 `;
 
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
+const StyledImage = styled(Image)`
   object-fit: cover;
 
   transition: all 0.1s linear;
@@ -101,7 +100,7 @@ const Card = ({id, cardImage, cardTime, cardDescription, cardUrl}: CardProps) =>
                 rel="noopener noreferrer"
             >
                 <ImageContainer>
-                    <Image src={imageSrc} alt="card profile"/>
+                    <StyledImage src={imageSrc} fill alt="card profile"/>
                     <StarButton variant="icon" onClick={(e) => e.preventDefault()}>
                         <Icons.Star/>
                     </StarButton>

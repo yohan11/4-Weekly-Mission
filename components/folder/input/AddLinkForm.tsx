@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "@/components/sharing/Button";
+import {Link} from "@/components/sharing/Icons"
 
-const Image = styled.img`
+const LinkIcon = styled(Link)`
   position: absolute;
   left: 20px;
+  top: 30%;
 `;
 
 const Input = styled.input`
@@ -18,10 +20,6 @@ const AddLinkFormContainer = styled.div`
   width: 60%;
   margin: auto;
   text-align: center;
-
-  ${Image} {
-    top: 28%;
-  }
 
   ${Input} {
     padding: 20px 104px 20px 50px;
@@ -50,7 +48,7 @@ const AddLinkButton = styled(Button)`
 const AddLinkForm = () => {
     return (
         <AddLinkFormContainer>
-            <Image src="/icons/link.svg" alt="link icon"/>
+            <LinkIcon/>
             <AddLinkButton variant="gradient">추가하기</AddLinkButton>
             <Input type="text" placeholder="링크를 추가해 보세요."/>
         </AddLinkFormContainer>

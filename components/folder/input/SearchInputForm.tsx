@@ -4,10 +4,12 @@ import * as Icons from "@/components/sharing/Icons";
 import Button from "@/components/sharing/Button";
 import {useRouter} from "next/router";
 
-const Image = styled.img`
+const SearchIcon = styled(Icons.Search)`
   position: absolute;
   left: 20px;
+  top: 30%;
 `;
+
 const StyledInput = styled.input`
   box-sizing: border-box;
   width: 100%;
@@ -17,10 +19,6 @@ const StyledInput = styled.input`
 const SearchInputFormContainer = styled.div`
   position: relative;
   width: 100%;
-
-  ${Image} {
-    top: 34%;
-  }
 
   ${StyledInput} {
     padding: 15px 16px 15px 44px;
@@ -65,7 +63,7 @@ const SearchInputForm = () => {
 
     return (
         <SearchInputFormContainer>
-            <Image src="/icons/search.svg" alt="search icon"/>
+            <SearchIcon/>
             <StyledInput
                 type="text"
                 placeholder="링크를 검색해 보세요."

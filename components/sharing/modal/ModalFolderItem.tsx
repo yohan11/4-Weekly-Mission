@@ -1,6 +1,7 @@
 import React, {MouseEventHandler} from "react";
 import styled from "styled-components";
 import {Folder} from "@/utils/types";
+import {Check} from "@/components/sharing/Icons"
 
 const Container = styled.div`
   display: flex;
@@ -38,7 +39,7 @@ const FocusFolderName = styled(FolderName)`
   color: var(--primary-color, #6d6afe);
 `;
 
-const CheckIcon = styled.img`
+const CheckIcon = styled(Check)`
   position: absolute;
   right: 8px;
 `;
@@ -56,7 +57,7 @@ function ModalFolderItem({folder, selected, onClick}: ModalFolderItemProps) {
         <FocusContainer onClick={onClick}>
             <FocusFolderName>{name}</FocusFolderName>
             <FolderLink>{link.count}개 링크</FolderLink>
-            <CheckIcon src="/icons/check_icon.svg" alt="check"/>
+            <CheckIcon/>
         </FocusContainer>
     ) : (
         <Container onClick={onClick}>
