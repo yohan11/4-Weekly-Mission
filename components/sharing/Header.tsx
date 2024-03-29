@@ -4,6 +4,7 @@ import UserProfile from "@/components/sharing/user/UserProfile";
 import {User} from "@/utils/types";
 import Link from "next/link";
 import media from "@/styles/mediaSize.js";
+import Image from "next/image";
 
 type HeaderStyledProps = {
     $fixed: boolean;
@@ -29,6 +30,7 @@ const HeaderContainer = styled.header<HeaderStyledProps>`
   ${media.mobile`padding: 30px 32px;`}
 `;
 
+
 interface HeaderProps {
     userInfo: User | null;
     fixed: boolean;
@@ -38,7 +40,7 @@ const Header = ({userInfo, fixed}: HeaderProps) => {
     return (
         <HeaderContainer $fixed={fixed}>
             <Link href="/">
-                <img alt="Linkbrary logo" src="/icons/Linkbrary.svg"/>
+                <Image alt="Linkbrary logo" src="/icons/Linkbrary.svg" width={133} height={24}/>
             </Link>
             {userInfo ? (
                 <UserProfile userInfo={userInfo}/>

@@ -17,7 +17,7 @@ const ProfileText = styled.span`
 interface UserProfileProps {
     userInfo: User;
     className?: string;
-    size?: string;
+    size?: number;
 }
 
 const UserProfile = ({userInfo, className, size}: UserProfileProps) => {
@@ -27,8 +27,8 @@ const UserProfile = ({userInfo, className, size}: UserProfileProps) => {
         <ProfileContainer className={className}>
             <Avatar
                 avatarImage={avatarImage}
-                width={size || "28px"}
-                height={size || "28px"}
+                width={size || 28}
+                height={size || 28}
             />
             <ProfileText>{userInfo["email"]}</ProfileText>
         </ProfileContainer>

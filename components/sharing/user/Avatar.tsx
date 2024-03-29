@@ -1,9 +1,11 @@
+import Image from "next/image";
+
 const DEFAULT_USER_ICON_URL = "/icons/default_profile.svg";
 
 interface AvatarProps {
     avatarImage?: string;
-    width?: string;
-    height?: string;
+    width?: number;
+    height?: number;
 }
 
 const Avatar = ({
@@ -12,13 +14,11 @@ const Avatar = ({
                     height,
                 }: AvatarProps) => {
     const avatarStyle: React.CSSProperties = {
-        width,
-        height,
         objectFit: "cover",
         borderRadius: "50%",
     };
 
-    return <img src={avatarImage} alt="user profile" style={avatarStyle}/>;
+    return <Image src={avatarImage} alt="user profile" style={avatarStyle} width={width} height={height}/>;
 };
 
 export default Avatar;
