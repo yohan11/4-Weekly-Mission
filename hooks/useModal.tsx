@@ -5,10 +5,12 @@ const useModal = () => {
 
     const handleModalOpen = () => {
         setOpenModal(true);
+        document.body.style.overflow = 'hidden';
     };
 
     const handleModalClose = () => {
         setOpenModal(false);
+        document.body.style.overflow = 'auto';
     };
 
     return {

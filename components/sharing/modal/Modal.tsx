@@ -1,4 +1,4 @@
-import React, {MouseEventHandler, ReactNode} from "react";
+import React, {MouseEventHandler, ReactNode, useEffect, useRef} from "react";
 import styled from "styled-components";
 import Button from "@/components/sharing/Button";
 import * as Icons from "@/components/sharing/Icons";
@@ -46,9 +46,24 @@ interface ModalProps {
 }
 
 function Modal({children, onClick}: ModalProps) {
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleModalClose = (e: any) => {
+            if (ref.current && !ref.current?.contains(e.target)) {
+                onClick(e);
+            }
+        }
+        document.addEventListener('mousedown', handleModalClose);
+        return () => {
+            document.removeEventListener('mousedown', handleModalClose);
+        };
+    }, []);
+
+
     return (
         <Background>
-            <ModalContainer>
+            <ModalContainer ref={ref}>
                 <CloseButton variant="icon" onClick={onClick}>
                     <Icons.Close/>
                 </CloseButton>
