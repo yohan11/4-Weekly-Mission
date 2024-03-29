@@ -4,6 +4,7 @@ import styled from "styled-components";
 type ModalButtonStyledProps = {
     $buttonStyle: "red" | "blue";
 };
+
 const StyledButton = styled.button<ModalButtonStyledProps>`
   width: 280px;
   padding: 16px 20px;
@@ -11,7 +12,7 @@ const StyledButton = styled.button<ModalButtonStyledProps>`
   border: none;
   background: ${({$buttonStyle}) =>
           $buttonStyle === "blue"
-                  ? "var(--gra-purpleblue-to-skyblue,linear-gradient(91deg, #6d6afe 0.12%, #6ae3fe 101.84%)"
+                  ? "linear-gradient(90.99deg, #6D6AFE 0.12%, #6AE3FE 101.84%)"
                   : "var(--color-red)"};
   color: #f5f5f5;
   font-size: 16px;
@@ -25,7 +26,7 @@ interface ModalButtonProps {
     onClick?: MouseEventHandler<HTMLElement>;
 }
 
-function ModalButton({children, buttonStyle, onClick}: ModalButtonProps) {
+const ModalButton = ({children, buttonStyle, onClick}: ModalButtonProps) => {
     return (
         <StyledButton onClick={onClick} $buttonStyle={buttonStyle}>
             {children}

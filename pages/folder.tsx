@@ -64,6 +64,7 @@ const Folder = () => {
     const router = useRouter();
     const searchParam = router.query['keyword'];
 
+
     const loadUser = async () => {
         const {email, profileImageSource} = await getUser();
         if (!email) return;
