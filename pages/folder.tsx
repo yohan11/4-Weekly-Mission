@@ -83,14 +83,12 @@ const Folder = () => {
             </FolderHeaderLayout>
             <MainLayout>
                 <SearchInputForm/>
-
                 {searchParam ? (
                     <SearchMessage>
                         {searchParam}
                         <span className="font-color-gray4">으로 검색한 결과입니다.</span>
                     </SearchMessage>
                 ) : null}
-
                 <div className="space-between">
                     <TagList/>
                     <AddFolderButton variant="text" onClick={handleModalOpen}>
@@ -101,7 +99,6 @@ const Folder = () => {
                     <span className="font-24px font-regular">{currentFolder.name}</span>
                     {currentFolder.id !== 1 ? <Actions/> : null}
                 </div>
-
                 <CardList/>
             </MainLayout>
             <Footer/>

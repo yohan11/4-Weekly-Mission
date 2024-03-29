@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import {CopyToClipboard} from "react-copy-to-clipboard";
 import {shareFacebook, shareKakao} from "@/utils/shareUtils";
 import {useFolder} from "@/contexts/FolderContext";
 import * as Icons from "@/components/sharing/Icons";
 import Button from "@/components/sharing/Button";
+import Toast from "@/components/sharing/Toast";
 
 const IconsContainer = styled.div`
   display: flex;
@@ -26,7 +27,7 @@ const ShareButton = styled(Button)`
 
 function SocialIcons() {
     const {currentFolder} = useFolder();
-
+    const [showToast, setShowToast] = useState(false)
 
     return (
         <>
@@ -47,7 +48,10 @@ function SocialIcons() {
                 </ShareButton>
                 <CopyToClipboard
                     text={`http://localhost:3000/shared/${currentFolder.id}`}
-                    onCopy={() => alert("클립보드에 복사되었습니다.")}
+                    onCopy={() => {
+                        setShowToast(true);
+                        setTimeout(() => setShowToast(false), 1000);
+                    }}
                 >
                     <ShareButton
                         variant="icon"
@@ -57,6 +61,7 @@ function SocialIcons() {
                     </ShareButton>
                 </CopyToClipboard>
             </IconsContainer>
+            {showToast ? <Toast show={showToast}/> : null}
         </>
     );
 }
