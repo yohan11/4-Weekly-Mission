@@ -30,7 +30,7 @@ const HeaderContainer = styled.header<HeaderStyledProps>`
 `;
 
 interface HeaderProps {
-    userInfo: User;
+    userInfo: User | null;
     fixed: boolean;
 }
 

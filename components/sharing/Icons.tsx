@@ -81,3 +81,15 @@ export const ShareLink = styled.div`
   background: url("/icons/link_share.svg") no-repeat;
   ${shareIconSize}
 `;
+
+export const EyeOff = styled.div`
+  background: url("/icons/eye-off.svg") no-repeat;
+  width: 16px;
+  height: 13.82px;
+`;
+
+export const EyeOn = styled.div`
+  background: url("/icons/eye-on.svg") no-repeat;
+  width: 16px;
+  height: 10.91px;
+`;
