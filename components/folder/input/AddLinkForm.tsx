@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Button from "@/components/sharing/Button";
 import {Link} from "@/components/sharing/Icons"
+import {media} from "@/styles/device";
 
 const LinkIcon = styled(Link)`
   position: absolute;
@@ -30,8 +31,10 @@ const AddLinkFormContainer = styled.div`
     border-radius: 15px;
   }
 
-  //모바일, 태블릿 사이즈
-  @media (min-width: 375px) and (max-width: 1124px) {
+  @media ${media.tablet} {
+    width: 100%;
+  }
+  @media ${media.mobile} {
     width: 100%;
   }
 `;

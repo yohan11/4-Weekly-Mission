@@ -17,7 +17,7 @@ import Header from "@/components/sharing/Header";
 import Button from "@/components/sharing/Button";
 import styled from "styled-components";
 import {useRouter} from "next/router";
-import media from "@/styles/mediaSize.js";
+import {media} from "@/styles/device";
 
 const AddFolderButton = styled(Button)`
   display: flex;
@@ -31,31 +31,44 @@ const AddFolderButton = styled(Button)`
   cursor: pointer;
   background: none;
 
-  ${media.mobile`
+  @media ${media.mobile} {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
 
-    padding: 8px 24px 8px 24px;
+    padding: 10px 24px;
 
     position: fixed;
     bottom: 5%;
-    left: 30%;
-    right: 30%;
+    left: 0;
+    right: 0;
     z-index: 1;
 
     border-radius: 20px;
     background-color: var(--color-primary);
     color: white;
-    `}
+    font-size: 12px;
+  }
 `;
 
 const SearchMessage = styled.h1`
   margin: 0;
-  ${media.mobile`
-   font-size: 24px;
-  `}
+  @media ${media.mobile} {
+    font-size: 24px;
+  }
 `;
+
+const FolderAction = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media ${media.mobile} {
+    flex-direction: column;
+    gap: 12px;
+  }
+`
 
 const Folder = () => {
     const [user, setUser] = useState({email: null, profileImageSource: null});
@@ -95,10 +108,10 @@ const Folder = () => {
                         폴더 추가 +
                     </AddFolderButton>
                 </div>
-                <div className="space-between">
+                <FolderAction className="space-between">
                     <span className="font-24px font-regular">{currentFolder.name}</span>
                     {currentFolder.id !== 1 ? <Actions/> : null}
-                </div>
+                </FolderAction>
                 <CardList/>
             </MainLayout>
             <Footer/>

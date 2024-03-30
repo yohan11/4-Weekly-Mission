@@ -15,11 +15,12 @@ const PopoverContainer = styled.div<PopoverStyledProps>`
   background: white;
 
   position: absolute;
-  right: -20%;
+  right: -5%;
   top: 100%;
   z-index: 1;
 
-  box-shadow: 0 2px 8px 0 #3332361a;
+  box-shadow: -1px 4px 4px 1px #3332361a;
+  border-radius: 5px;
 `;
 
 interface PopoverProps {

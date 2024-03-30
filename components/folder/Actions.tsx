@@ -8,7 +8,7 @@ import Button from "@/components/sharing/Button";
 import * as Icons from "@/components/sharing/Icons";
 import ModalButton from "@/components/sharing/modal/ModalButton";
 import SocialIcons from "@/components/sharing/modal/SocialIcons";
-import media from "@/styles/mediaSize.js";
+import {media} from "@/styles/device";
 
 const IconsContainer = styled.div`
   display: flex;
@@ -16,7 +16,9 @@ const IconsContainer = styled.div`
   align-items: center;
   gap: 12px;
 
-  ${media.mobile`justify-content: left;`}
+  @media ${media.mobile} {
+    justify-content: left;
+  }
 `;
 
 const ActionIcon = styled(Button)`

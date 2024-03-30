@@ -7,7 +7,7 @@ import {getLinksByKeyword} from "@/utils/api";
 import NoLink from "@/components/sharing/NoLink";
 import {Link} from "@/utils/types";
 import {useRouter} from "next/router";
-import media from "@/styles/mediaSize.js";
+import {media} from "@/styles/device";
 
 const CardListContainer = styled.div`
   width: 100%;
@@ -16,10 +16,13 @@ const CardListContainer = styled.div`
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   gap: 20px;
 
-  ${media.tablet`
-   grid-template: repeat(2, 1fr) / repeat(2, 1fr);`}
-  ${media.mobile`display: flex;
-    flex-direction: column;`}
+  @media ${media.tablet} {
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  }
+  @media ${media.mobile} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const CardList = () => {

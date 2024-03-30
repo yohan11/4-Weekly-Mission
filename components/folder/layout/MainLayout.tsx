@@ -1,6 +1,6 @@
 import React, {ReactNode} from "react";
 import styled from "styled-components";
-import media from "@/styles/mediaSize.js";
+import {media} from "@/styles/device";
 
 const Main = styled.main`
   display: flex;
@@ -13,10 +13,14 @@ const Main = styled.main`
 
   background-color: var(--color-white);
 
-  ${media.tablet` padding: 4% 32px;`}
-  ${media.mobile`
+  @media ${media.tablet} {
     padding: 4% 32px;
-    gap: 30px;`}
+  }
+  @media ${media.mobile} {
+    padding: 4% 32px;
+    gap: 30px;;
+  }
+
 
 `;
 const MainLayout = ({children}: { children: ReactNode }) => {

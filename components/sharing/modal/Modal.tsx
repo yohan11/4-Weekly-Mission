@@ -2,6 +2,7 @@ import React, {MouseEventHandler, ReactNode, useEffect, useRef} from "react";
 import styled from "styled-components";
 import Button from "@/components/sharing/Button";
 import * as Icons from "@/components/sharing/Icons";
+import {media} from "@/styles/device";
 
 const Background = styled.div`
   position: fixed;
@@ -32,6 +33,10 @@ const ModalContainer = styled.div`
   top: 50%;
   z-index: 1;
   transform: translate(-50%, -50%);
+
+  @media ${media.mobile} {
+    width: 240px;
+  }
 `;
 
 const CloseButton = styled(Button)`

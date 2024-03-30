@@ -3,7 +3,7 @@ import styled from "styled-components";
 import UserProfile from "@/components/sharing/user/UserProfile";
 import {User} from "@/utils/types";
 import Link from "next/link";
-import media from "@/styles/mediaSize.js";
+import {media} from "@/styles/device";
 import Image from "next/image";
 
 type HeaderStyledProps = {
@@ -26,8 +26,12 @@ const HeaderContainer = styled.header<HeaderStyledProps>`
 
   background-color: var(--color-background);
 
-  ${media.tablet`padding: 30px 32px;`}
-  ${media.mobile`padding: 30px 32px;`}
+  @media ${media.tablet} {
+    padding: 30px 32px;
+  };
+  @media ${media.mobile} {
+    padding: 30px 32px;
+  };
 `;
 
 

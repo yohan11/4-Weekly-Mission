@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import {ReactNode} from "react";
-import media from "@/styles/mediaSize.js";
+import {media} from "@/styles/device";
 
 type TagStyledProps = {
     $isSelected: boolean;
 };
+
 const TagContainer = styled.button<TagStyledProps>`
   padding: 8px 12px 8px 12px;
   background-color: ${({$isSelected}) =>
@@ -16,9 +17,10 @@ const TagContainer = styled.button<TagStyledProps>`
 
   white-space: nowrap;
 
-  ${media.mobile`
+  @media ${media.mobile} {
     padding: 6px 10px;
-    font-size: 14px;`}
+    font-size: 14px;
+  }
 `;
 
 interface TagProps {

@@ -43,7 +43,7 @@ const ErrorMessage = styled.span`
   color: var(--color-red)`
 
 interface InputProps {
-    variant: 'text' | 'password' | 'error text' | 'error password'
+    variant: 'text' | 'password'
     error?: boolean
 }
 
@@ -83,6 +83,8 @@ const LoginInputForm = ({variant, error}: InputProps) => {
                         </EyesButton>
                     </PasswordInputContainer>
                     {error ? <ErrorMessage>비밀번호를 다시 입력해주세요</ErrorMessage> : null}</>)
+        default:
+            return null
     }
 
 };

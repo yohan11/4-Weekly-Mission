@@ -4,6 +4,7 @@ import Button from "@/components/sharing/Button";
 import * as Icons from "@/components/sharing/Icons";
 import Kebab from "@/components/sharing/Kebab";
 import Image from "next/image";
+import {useState} from "react";
 
 const SAMPLE_IMAGE_URL = "/images/default_card.svg";
 
@@ -71,11 +72,19 @@ const Contents = styled.div`
   font-weight: 400;
 `;
 
-const StarButton = styled(Button)`
+type StarButtonProps = {
+    $filled: boolean;
+}
+
+const StarButton = styled(Button)<StarButtonProps>`
   position: absolute;
   right: 2%;
   top: 12px;
-  opacity: 0.7;
+  opacity: ${({$filled}) => $filled ? 1 : 0.7};
+  filter: ${({$filled}) =>
+          $filled
+                  ? 'invert(60%) sepia(100%) saturate(2000%) hue-rotate(28deg) brightness(150%) contrast(80%)'
+                  : 'null'};
 `;
 
 interface CardProps {
@@ -91,6 +100,7 @@ interface CardProps {
 
 const Card = ({id, cardImage, cardTime, cardDescription, cardUrl}: CardProps) => {
     const imageSrc = cardImage || SAMPLE_IMAGE_URL;
+    const [filledStar, setFilledStar] = useState(false);
 
     return (
         <CardContainer>
@@ -102,7 +112,11 @@ const Card = ({id, cardImage, cardTime, cardDescription, cardUrl}: CardProps) =>
             >
                 <ImageContainer>
                     <StyledImage src={imageSrc} fill alt="card profile"/>
-                    <StarButton variant="icon" onClick={(e) => e.preventDefault()}>
+                    <StarButton variant="icon" $filled={filledStar} onClick={(e) => {
+                        e.preventDefault();
+                        if (filledStar) setFilledStar(false);
+                        else setFilledStar(true);
+                    }}>
                         <Icons.Star/>
                     </StarButton>
                 </ImageContainer>
