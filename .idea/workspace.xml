@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="feat: 내 유저 정보 클릭 시 /folder로 이동">
+    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="design: a 태그 글씨 색상 변경">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sharing/user/UserProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/user/UserProfile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sharing/modal/SocialIcons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/modal/SocialIcons.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,15 +159,7 @@
       <workItem from="1711753233806" duration="759000" />
       <workItem from="1711753998863" duration="2193000" />
       <workItem from="1711756628070" duration="826000" />
-      <workItem from="1711775243892" duration="5431000" />
-    </task>
-    <task id="LOCAL-00020" summary="fix: 카드 컴포넌트 클릭 시 새 창을 열어 이동">
-      <option name="closed" value="true" />
-      <created>1707454090699</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1707454090699</updated>
+      <workItem from="1711775243892" duration="6231000" />
     </task>
     <task id="LOCAL-00021" summary="refactor: 코드리뷰 반영">
       <option name="closed" value="true" />
@@ -554,7 +545,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711782585844</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="design: a 태그 글씨 색상 변경">
+      <option name="closed" value="true" />
+      <created>1711782808807</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1711782808807</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +572,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="style: 코드 정리" />
     <MESSAGE value="feat: 모달 컴포넌트 수정 및 컴포넌트 리팩토링" />
     <MESSAGE value="feat: 상황 별 모달 띄우기 구현" />
     <MESSAGE value="feat: 팝오버 구현, 팝오버 내 모달 구현" />
@@ -598,6 +596,7 @@
     <MESSAGE value="배포 준비" />
     <MESSAGE value="design: 반응형 디자인 개선" />
     <MESSAGE value="feat: 내 유저 정보 클릭 시 /folder로 이동" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 내 유저 정보 클릭 시 /folder로 이동" />
+    <MESSAGE value="design: a 태그 글씨 색상 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="design: a 태그 글씨 색상 변경" />
   </component>
 </project>

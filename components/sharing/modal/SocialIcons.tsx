@@ -6,6 +6,7 @@ import {useFolder} from "@/contexts/FolderContext";
 import * as Icons from "@/components/sharing/Icons";
 import Button from "@/components/sharing/Button";
 import Toast from "@/components/sharing/Toast";
+import {media} from "@/styles/device";
 
 const IconsContainer = styled.div`
   display: flex;
@@ -16,6 +17,9 @@ const IconText = styled.span`
   font-size: 13px;
   font-weight: 400;
   text-align: center;
+  @media ${media.mobile} {
+    font-size: 12px;
+  }
 `;
 
 const ShareButton = styled(Button)`
