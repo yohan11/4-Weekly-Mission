@@ -6,5 +6,5 @@ const sizes = {
 
 export const media = {
     tablet: `(min-width: ${sizes.tablet}) and (max-width: 1199px) `,
-    mobile: `(min-width: ${sizes.mobile}) and (max-width: 767px)`,
+    mobile: ` (max-width: ${sizes.tablet})`,
 };
