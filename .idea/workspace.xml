@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="배포 준비">
-      <change beforePath="$PROJECT_DIR$/components/folder/Actions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/folder/Actions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/folder/card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/folder/card/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/folder/card/CardList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/folder/card/CardList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/folder/input/AddLinkForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/folder/input/AddLinkForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/folder/layout/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/folder/layout/MainLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/folder/tag/Tag.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/folder/tag/Tag.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sharing/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/Footer.tsx" afterDir="false" />
+    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="design: 반응형 디자인 개선">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/sharing/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sharing/Popover.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/Popover.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sharing/input/LoginInputForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/input/LoginInputForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sharing/modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/modal/Modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sharing/user/UserProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/user/UserProfile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/folder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/folder.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/mediaSize.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/device.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,15 +159,7 @@
       <workItem from="1711753233806" duration="759000" />
       <workItem from="1711753998863" duration="2193000" />
       <workItem from="1711756628070" duration="826000" />
-      <workItem from="1711775243892" duration="4547000" />
-    </task>
-    <task id="LOCAL-00018" summary="style: 코드 정리">
-      <option name="closed" value="true" />
-      <created>1707451955265</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1707451955265</updated>
+      <workItem from="1711775243892" duration="5232000" />
     </task>
     <task id="LOCAL-00019" summary="feat: 마우스 hover 시 이미지 확대되는 디자인 적용">
       <option name="closed" value="true" />
@@ -565,7 +545,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711756887531</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="design: 반응형 디자인 개선">
+      <option name="closed" value="true" />
+      <created>1711781631064</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1711781631065</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +572,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="refactor: 코드리뷰 반영" />
     <MESSAGE value="feat: 페어 프로그래밍 - 모달 생성" />
     <MESSAGE value="style: 코드 정리" />
     <MESSAGE value="feat: 모달 컴포넌트 수정 및 컴포넌트 리팩토링" />
@@ -609,6 +596,7 @@
     <MESSAGE value="refactor: next 이미지 최적화" />
     <MESSAGE value="fix: 케밥, 팝오버 안보이는 문제 해결" />
     <MESSAGE value="배포 준비" />
-    <option name="LAST_COMMIT_MESSAGE" value="배포 준비" />
+    <MESSAGE value="design: 반응형 디자인 개선" />
+    <option name="LAST_COMMIT_MESSAGE" value="design: 반응형 디자인 개선" />
   </component>
 </project>

@@ -47,7 +47,9 @@ const Header = ({userInfo, fixed}: HeaderProps) => {
                 <Image alt="Linkbrary logo" src="/icons/Linkbrary.svg" width={133} height={24}/>
             </Link>
             {userInfo ? (
-                <UserProfile userInfo={userInfo}/>
+                <Link href='/folder'>
+                    <UserProfile userInfo={userInfo}/>
+                </Link>
             ) : (
                 <Button variant="gradient">로그인</Button>
             )}
