@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="design: 반응형 디자인 개선">
+    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="feat: 내 유저 정보 클릭 시 /folder로 이동">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sharing/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sharing/user/UserProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/user/UserProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,15 +160,7 @@
       <workItem from="1711753233806" duration="759000" />
       <workItem from="1711753998863" duration="2193000" />
       <workItem from="1711756628070" duration="826000" />
-      <workItem from="1711775243892" duration="5232000" />
-    </task>
-    <task id="LOCAL-00019" summary="feat: 마우스 hover 시 이미지 확대되는 디자인 적용">
-      <option name="closed" value="true" />
-      <created>1707453145889</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1707453145889</updated>
+      <workItem from="1711775243892" duration="5431000" />
     </task>
     <task id="LOCAL-00020" summary="fix: 카드 컴포넌트 클릭 시 새 창을 열어 이동">
       <option name="closed" value="true" />
@@ -553,7 +546,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711781631065</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="feat: 내 유저 정보 클릭 시 /folder로 이동">
+      <option name="closed" value="true" />
+      <created>1711782585844</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1711782585844</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: 페어 프로그래밍 - 모달 생성" />
     <MESSAGE value="style: 코드 정리" />
     <MESSAGE value="feat: 모달 컴포넌트 수정 및 컴포넌트 리팩토링" />
     <MESSAGE value="feat: 상황 별 모달 띄우기 구현" />
@@ -597,6 +597,7 @@
     <MESSAGE value="fix: 케밥, 팝오버 안보이는 문제 해결" />
     <MESSAGE value="배포 준비" />
     <MESSAGE value="design: 반응형 디자인 개선" />
-    <option name="LAST_COMMIT_MESSAGE" value="design: 반응형 디자인 개선" />
+    <MESSAGE value="feat: 내 유저 정보 클릭 시 /folder로 이동" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 내 유저 정보 클릭 시 /folder로 이동" />
   </component>
 </project>

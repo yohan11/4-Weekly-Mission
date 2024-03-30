@@ -11,6 +11,8 @@ const ProfileContainer = styled.div`
 `;
 
 const ProfileText = styled.span`
+  color: var(--color--gray4);
+  
   @media ${media.mobile} {
     display: none;
   }
