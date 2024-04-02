@@ -22,10 +22,10 @@ const StyledIconBox = styled.div`
   gap: 16px;
 `
 
-const SocialLogin = () => {
+const SocialLogin = ({message}: { message: string }) => {
     return (
         <SocialLoginContainer>
-            소셜로그인
+            {message}
             <StyledIconBox><Icons.LoginGoogle/><Icons.LoginKakao/></StyledIconBox>
         </SocialLoginContainer>
     );

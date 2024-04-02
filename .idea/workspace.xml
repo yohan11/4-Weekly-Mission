@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="design: 기기 사이즈 수정">
-      <change afterPath="$PROJECT_DIR$/components/auth/SocialLogin.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/signin.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/google.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/kakao_login.svg" afterDir="false" />
+    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="feat: 로그인 페이지 퍼블리싱">
+      <change afterPath="$PROJECT_DIR$/pages/signup.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/auth.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sharing/Icons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/Icons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sharing/input/LoginInputForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/input/LoginInputForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/inputtest.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/auth/SocialLogin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/SocialLogin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signin.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +26,8 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -40,7 +37,6 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="part2-김준영-week8" />
         <entry key="$PROJECT_DIR$" value="part3-김준영-week14" />
       </map>
     </option>
@@ -77,29 +73,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "part3-김준영-week15",
-    "last_opened_file_path": "/Users/junyeong/Library/Mobile Documents/com~apple~CloudDocs/Desktop/데스크탑 - 김준영의 MacBook Pro/Development/CodeIt_Sprint/4-weekly-mission",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/usr/local/lib/node_modules/prettier",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "ts.external.directory.path": "/Users/junyeong/Library/Mobile Documents/com~apple~CloudDocs/Desktop/데스크탑 - 김준영의 MacBook Pro/Development/CodeIt_Sprint/4-weekly-mission/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;part3-김준영-week15&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/junyeong/Library/Mobile Documents/com~apple~CloudDocs/Desktop/데스크탑 - 김준영의 MacBook Pro/Development/CodeIt_Sprint/4-weekly-mission&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/usr/local/lib/node_modules/prettier&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/junyeong/Library/Mobile Documents/com~apple~CloudDocs/Desktop/데스크탑 - 김준영의 MacBook Pro/Development/CodeIt_Sprint/4-weekly-mission/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -167,15 +163,8 @@
       <workItem from="1711753998863" duration="2193000" />
       <workItem from="1711756628070" duration="826000" />
       <workItem from="1711775243892" duration="7898000" />
-      <workItem from="1712071783920" duration="2679000" />
-    </task>
-    <task id="LOCAL-00023" summary="refactor: 최신버전 React Route 적용">
-      <option name="closed" value="true" />
-      <created>1708142373380</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1708142373380</updated>
+      <workItem from="1712071783920" duration="2762000" />
+      <workItem from="1712074554780" duration="306000" />
     </task>
     <task id="LOCAL-00024" summary="refactor: 컴포넌트 네이밍 수정 및 이미지 로드 수정">
       <option name="closed" value="true" />
@@ -561,7 +550,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711785882913</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="feat: 로그인 페이지 퍼블리싱">
+      <option name="closed" value="true" />
+      <created>1712074506398</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1712074506398</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +577,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: 팝오버 구현, 팝오버 내 모달 구현" />
     <MESSAGE value="feat: 팝오버 및 모달 닫기" />
     <MESSAGE value="feat: 폴더 공유 기능 구현" />
     <MESSAGE value="docs: 확장자 통일" />
@@ -605,6 +601,7 @@
     <MESSAGE value="design: a 태그 글씨 색상 변경" />
     <MESSAGE value="design: 모달 반응형 디자인 수정" />
     <MESSAGE value="design: 기기 사이즈 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="design: 기기 사이즈 수정" />
+    <MESSAGE value="feat: 로그인 페이지 퍼블리싱" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 로그인 페이지 퍼블리싱" />
   </component>
 </project>
