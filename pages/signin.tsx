@@ -32,7 +32,9 @@ const SignIn = () => {
     return (
         <AS.SignInContainer>
             <AS.StyledLogo>
-                <Image alt="Linkbrary logo" src="/icons/Linkbrary.svg" width={210.58} height={38}/>
+                <Link href="/">
+                    <Image alt="Linkbrary logo" src="/icons/Linkbrary.svg" width={210.58} height={38}/>
+                </Link>
                 <span>회원이 아니신가요? <Link href="/signup"><AS.StyledLink> 회원 가입하기 </AS.StyledLink></Link></span>
             </AS.StyledLogo>
             <AS.StyledForm onSubmit={handleSubmit(onChangeFormLib)}>

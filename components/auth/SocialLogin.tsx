@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Icons from "@/components/sharing/Icons"
 import styled from "styled-components";
+import Link from "next/link";
 
 const SocialLoginContainer = styled.div`
   display: flex;
@@ -26,7 +27,10 @@ const SocialLogin = ({message}: { message: string }) => {
     return (
         <SocialLoginContainer>
             {message}
-            <StyledIconBox><Icons.LoginGoogle/><Icons.LoginKakao/></StyledIconBox>
+            <StyledIconBox>
+                <Link href="https://www.google.com"><Icons.LoginGoogle/></Link>
+                <Link href="https://www.kakaocorp.com/page"><Icons.LoginKakao/></Link>
+            </StyledIconBox>
         </SocialLoginContainer>
     );
 };
