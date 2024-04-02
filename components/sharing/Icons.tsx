@@ -112,3 +112,13 @@ export const Link = styled.div`
   width: 20px;
   height: 21px;
 `;
+
+export const LoginKakao = styled.div`
+  background: url("/icons/kakao_login.svg") no-repeat;
+  ${shareIconSize}
+`;
+
+export const LoginGoogle = styled.div`
+  background: url("/icons/google.svg") no-repeat;
+  ${shareIconSize}
+`;

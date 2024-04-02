@@ -38,6 +38,12 @@ const EyesButton = styled(Button)`
   right: 5px;
 `
 
+const LabelAndInput = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px
+`
+
 const ErrorMessage = styled.span`
   font-size: 14px;
   color: var(--color-red)`
@@ -45,9 +51,10 @@ const ErrorMessage = styled.span`
 interface InputProps {
     variant: 'text' | 'password'
     error?: boolean
+    label: string;
 }
 
-const LoginInputForm = ({variant, error}: InputProps) => {
+const LoginInputForm = ({variant, error, label}: InputProps) => {
     const [eyeOff, setEyeOff] = useState(true);
     const passwordRef = useRef<HTMLInputElement>(null);
 
@@ -67,21 +74,28 @@ const LoginInputForm = ({variant, error}: InputProps) => {
         case "text":
             return (
                 <>
-                    <TextInput type={variant} placeholder='내용 입력' $error={error}
-                               onBlur={() => console.log("focusOut")}/>
+                    <LabelAndInput>
+                        <label htmlFor={label}>{label}</label>
+                        <TextInput name={label} type={variant} placeholder='내용 입력' $error={error}
+                                   onBlur={() => console.log("focusOut")}/>
+                    </LabelAndInput>
                     {error ? <ErrorMessage>아이디를 다시 입력해주세요</ErrorMessage> : null}
                 </>
             )
         case "password":
             return (
                 <>
-                    <PasswordInputContainer>
-                        <PasswordInput type={variant} placeholder='내용 입력' ref={passwordRef} $error={error}
-                                       onBlur={() => console.log("focusOut")}/>
-                        <EyesButton variant='icon' onClick={toggleEyesButton}>
-                            {eyeOff ? <Icons.EyeOff/> : <Icons.EyeOn/>}
-                        </EyesButton>
-                    </PasswordInputContainer>
+                    <LabelAndInput>
+                        <label htmlFor={label}>{label}</label>
+                        <PasswordInputContainer>
+                            <PasswordInput name={label} type={variant} placeholder='내용 입력' ref={passwordRef}
+                                           $error={error}
+                                           onBlur={() => console.log("focusOut")}/>
+                            <EyesButton variant='icon' onClick={toggleEyesButton}>
+                                {eyeOff ? <Icons.EyeOff/> : <Icons.EyeOn/>}
+                            </EyesButton>
+                        </PasswordInputContainer>
+                    </LabelAndInput>
                     {error ? <ErrorMessage>비밀번호를 다시 입력해주세요</ErrorMessage> : null}</>)
         default:
             return null
