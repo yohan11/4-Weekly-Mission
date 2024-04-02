@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="feat: react-hook-form 사용하여 로그인, 회원가입 유효성 검사 구현">
+    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="feat: 소셜 로그인 및 메인 로고 링크 연결">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/auth/SocialLogin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/SocialLogin.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/signin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signin.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/styles/auth.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,15 +163,7 @@
       <workItem from="1712071783920" duration="2762000" />
       <workItem from="1712074554780" duration="386000" />
       <workItem from="1712074945552" duration="6334000" />
-      <workItem from="1712081293815" duration="115000" />
-    </task>
-    <task id="LOCAL-00026" summary="feat: Folder 페이지 생성 및 버튼, 검색창 스타일 상속 작업">
-      <option name="closed" value="true" />
-      <created>1708167360470</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1708167360470</updated>
+      <workItem from="1712081293815" duration="261000" />
     </task>
     <task id="LOCAL-00027" summary="feat: TagBox 컴포넌트 생성">
       <option name="closed" value="true" />
@@ -559,7 +549,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712081276667</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="feat: 소셜 로그인 및 메인 로고 링크 연결">
+      <option name="closed" value="true" />
+      <created>1712081454360</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1712081454360</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -578,7 +576,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="docs: 확장자 통일" />
     <MESSAGE value="feat: 링크 검색 기능 구현" />
     <MESSAGE value="refactor: 아이콘 버튼 컴포넌트 수정" />
     <MESSAGE value="feat: 검색어 지우기 기능 구현" />
@@ -603,6 +600,7 @@
     <MESSAGE value="feat: 로그인 페이지 퍼블리싱" />
     <MESSAGE value="feat: 회원가입 페이지 퍼블리싱" />
     <MESSAGE value="feat: react-hook-form 사용하여 로그인, 회원가입 유효성 검사 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: react-hook-form 사용하여 로그인, 회원가입 유효성 검사 구현" />
+    <MESSAGE value="feat: 소셜 로그인 및 메인 로고 링크 연결" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 소셜 로그인 및 메인 로고 링크 연결" />
   </component>
 </project>

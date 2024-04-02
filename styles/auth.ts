@@ -15,6 +15,8 @@ export const SignInContainer = styled.div`
 
   position: absolute;
   inset: 0;
+
+  min-width: 300px;
 `
 
 export const StyledLogo = styled.div`
