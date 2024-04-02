@@ -1,7 +1,8 @@
-import React, {useRef, useState} from 'react';
+import React, {useState} from 'react';
 import styled from "styled-components";
 import * as Icons from "@/components/sharing/Icons"
 import Button from "@/components/sharing/Button";
+import {FieldError, UseFormRegisterReturn} from "react-hook-form";
 
 type InputStyledProps = {
     $error?: boolean
@@ -50,53 +51,43 @@ const ErrorMessage = styled.span`
 
 interface InputProps {
     variant: 'text' | 'password'
-    error?: boolean
+    error: FieldError;
     label: string;
+    placeholder: string;
+    register: UseFormRegisterReturn;
 }
 
-const LoginInputForm = ({variant, error, label}: InputProps) => {
+const LoginInputForm = ({variant, error, label, placeholder, register}: InputProps) => {
     const [eyeOff, setEyeOff] = useState(true);
-    const passwordRef = useRef<HTMLInputElement>(null);
-
-    const toggleEyesButton = () => {
-        if (passwordRef.current) {
-            if (eyeOff) {
-                passwordRef.current.type = 'text';
-                setEyeOff(false);
-            } else {
-                passwordRef.current.type = 'password';
-                setEyeOff(true);
-            }
-        }
-    }
 
     switch (variant) {
         case "text":
             return (
-                <>
-                    <LabelAndInput>
-                        <label htmlFor={label}>{label}</label>
-                        <TextInput name={label} type={variant} placeholder='내용 입력' $error={error}
-                                   onBlur={() => console.log("focusOut")}/>
-                    </LabelAndInput>
-                    {error ? <ErrorMessage>아이디를 다시 입력해주세요</ErrorMessage> : null}
-                </>
+                <LabelAndInput>
+                    <label htmlFor={label}>{label}</label>
+                    <TextInput type={variant} placeholder={placeholder} $error={!!error}
+                               {...register}/>
+                    {error?.message ? <ErrorMessage>{error.message}</ErrorMessage> : null}
+                </LabelAndInput>
             )
         case "password":
             return (
-                <>
-                    <LabelAndInput>
-                        <label htmlFor={label}>{label}</label>
-                        <PasswordInputContainer>
-                            <PasswordInput name={label} type={variant} placeholder='내용 입력' ref={passwordRef}
-                                           $error={error}
-                                           onBlur={() => console.log("focusOut")}/>
-                            <EyesButton variant='icon' onClick={toggleEyesButton}>
-                                {eyeOff ? <Icons.EyeOff/> : <Icons.EyeOn/>}
-                            </EyesButton>
-                        </PasswordInputContainer>
-                    </LabelAndInput>
-                    {error ? <ErrorMessage>비밀번호를 다시 입력해주세요</ErrorMessage> : null}</>)
+                <LabelAndInput>
+                    <label htmlFor={label}>{label}</label>
+                    <PasswordInputContainer>
+                        <PasswordInput type={eyeOff ? variant : 'text'} placeholder={placeholder}
+                                       $error={!!error}
+                                       {...register}/>
+                        <EyesButton variant='icon' onClick={(e) => {
+                            e.preventDefault();
+                            setEyeOff(!eyeOff);
+                        }}>
+                            {eyeOff ? <Icons.EyeOff/> : <Icons.EyeOn/>}
+                        </EyesButton>
+                    </PasswordInputContainer>
+                    {error?.message ? <ErrorMessage>{error.message}</ErrorMessage> : null}
+                </LabelAndInput>
+            )
         default:
             return null
     }

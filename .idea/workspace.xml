@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="feat: 로그인 페이지 퍼블리싱">
-      <change afterPath="$PROJECT_DIR$/pages/signup.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/auth.ts" afterDir="false" />
+    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="feat: 회원가입 페이지 퍼블리싱">
+      <change afterPath="$PROJECT_DIR$/utils/authUtils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/auth/SocialLogin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/SocialLogin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sharing/input/LoginInputForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/input/LoginInputForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/signin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signup.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,15 +166,8 @@
       <workItem from="1711756628070" duration="826000" />
       <workItem from="1711775243892" duration="7898000" />
       <workItem from="1712071783920" duration="2762000" />
-      <workItem from="1712074554780" duration="306000" />
-    </task>
-    <task id="LOCAL-00024" summary="refactor: 컴포넌트 네이밍 수정 및 이미지 로드 수정">
-      <option name="closed" value="true" />
-      <created>1708142422128</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1708142422128</updated>
+      <workItem from="1712074554780" duration="386000" />
+      <workItem from="1712074945552" duration="6261000" />
     </task>
     <task id="LOCAL-00025" summary="fix: 이미지 로드 경로 수정">
       <option name="closed" value="true" />
@@ -558,7 +553,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712074506398</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="feat: 회원가입 페이지 퍼블리싱">
+      <option name="closed" value="true" />
+      <created>1712074901267</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1712074901267</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -577,7 +580,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: 팝오버 및 모달 닫기" />
     <MESSAGE value="feat: 폴더 공유 기능 구현" />
     <MESSAGE value="docs: 확장자 통일" />
     <MESSAGE value="feat: 링크 검색 기능 구현" />
@@ -602,6 +604,7 @@
     <MESSAGE value="design: 모달 반응형 디자인 수정" />
     <MESSAGE value="design: 기기 사이즈 수정" />
     <MESSAGE value="feat: 로그인 페이지 퍼블리싱" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 로그인 페이지 퍼블리싱" />
+    <MESSAGE value="feat: 회원가입 페이지 퍼블리싱" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 회원가입 페이지 퍼블리싱" />
   </component>
 </project>
