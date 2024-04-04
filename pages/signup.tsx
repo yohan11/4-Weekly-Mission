@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import LoginInputForm from "@/components/sharing/input/LoginInputForm";
@@ -63,6 +63,11 @@ const SignUp = () => {
       router.push("/folder");
     }
   };
+
+  useEffect(() => {
+    const accessToken = localStorage.getItem("accessToken");
+    if (accessToken) router.push("/folder");
+  }, []);
 
   return (
     <AS.SignInContainer>

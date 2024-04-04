@@ -62,6 +62,11 @@ const SignIn = () => {
     }
   }, [loginError, setError]);
 
+  useEffect(() => {
+    const accessToken = localStorage.getItem("accessToken");
+    if (accessToken) router.push("/folder");
+  }, []);
+
   return (
     <AS.SignInContainer>
       <AS.StyledLogo>
