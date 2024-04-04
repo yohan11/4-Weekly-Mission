@@ -9,6 +9,7 @@ import {
 } from "@/utils/types";
 import {
   ERROR_400_MESSAGE,
+  ERROR_409_MESSAGE,
   FILTER_LINKS,
   HTTP_ERROR,
   NETWORK_ERROR,
@@ -84,6 +85,21 @@ export const postSignIn = async (values: TLogin): Promise<TToken | null> => {
     .then((responseData): TToken => responseData.data)
     .catch((error: Error) => {
       if (error.message === ERROR_400_MESSAGE) return null;
+      throw NETWORK_ERROR(error);
+    });
+};
+
+export const checkEmail = async (values: string): Promise<boolean | null> => {
+  return await axios
+    .post("/check-email", JSON.stringify({ email: values }), {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then((response) => response.data)
+    .then((responseData): boolean => responseData.data)
+    .catch((error: Error) => {
+      if (error.message === ERROR_409_MESSAGE) return null;
       throw NETWORK_ERROR(error);
     });
 };

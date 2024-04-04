@@ -24,6 +24,7 @@ export const NETWORK_ERROR = (error: Error) => {
   return new Error(`NETWORK 에러 - ${error.message}`);
 };
 export const ERROR_400_MESSAGE = "Request failed with status code 400";
+export const ERROR_409_MESSAGE = "Request failed with status code 409";
 
 export const FILTER_LINKS = (data: TLink[], keyword: string) => {
   return data.filter(
