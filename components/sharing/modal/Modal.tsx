@@ -1,8 +1,9 @@
-import React, {MouseEventHandler, ReactNode, useEffect, useRef} from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import Button from "@/components/sharing/Button";
 import * as Icons from "@/components/sharing/Icons";
-import {media} from "@/styles/device";
+import { media } from "@/styles/device";
+import { TChildren, TOnClick } from "@/utils/types";
 
 const Background = styled.div`
   position: fixed;
@@ -45,37 +46,33 @@ const CloseButton = styled(Button)`
   right: 15px;
 `;
 
-interface ModalProps {
-    children: ReactNode;
-    onClick: MouseEventHandler<HTMLButtonElement>;
-}
+type ModalProps = TChildren & TOnClick;
 
-function Modal({children, onClick}: ModalProps) {
-    const ref = useRef<HTMLDivElement>(null);
+function Modal({ children, onClick }: ModalProps) {
+  const ref = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const handleModalClose = (e: any) => {
-            if (ref.current && !ref.current?.contains(e.target)) {
-                onClick(e);
-            }
-        }
-        document.addEventListener('mousedown', handleModalClose);
-        return () => {
-            document.removeEventListener('mousedown', handleModalClose);
-        };
-    }, []);
+  useEffect(() => {
+    const handleModalClose = (e: any) => {
+      if (ref.current && !ref.current?.contains(e.target)) {
+        onClick(e);
+      }
+    };
+    document.addEventListener("mousedown", handleModalClose);
+    return () => {
+      document.removeEventListener("mousedown", handleModalClose);
+    };
+  }, []);
 
-
-    return (
-        <Background>
-            <ModalContainer ref={ref}>
-                <CloseButton variant="icon" onClick={onClick}>
-                    <Icons.Close/>
-                </CloseButton>
-                {children}
-            </ModalContainer>
-        </Background>
-    );
+  return (
+    <Background>
+      <ModalContainer ref={ref}>
+        <CloseButton variant="icon" onClick={onClick}>
+          <Icons.Close />
+        </CloseButton>
+        {children}
+      </ModalContainer>
+    </Background>
+  );
 }
 
 export default Modal;

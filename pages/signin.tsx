@@ -6,7 +6,7 @@ import Button from "@/components/sharing/Button";
 import SocialLogin from "@/components/auth/SocialLogin";
 import * as AS from "@/styles/auth";
 import {FieldError, useForm} from "react-hook-form";
-import {EMAIL_FORM_ERROR_MESSAGE, EMAIL_REGEX, INPUT_EMAIL_MESSAGE, INPUT_PASSWORD_MESSAGE} from "@/utils/authUtils";
+import {EMAIL_FORM_ERROR_MESSAGE, EMAIL_REGEX, INPUT_EMAIL_MESSAGE, INPUT_PASSWORD_MESSAGE} from "@/utils/constants";
 
 const SignIn = () => {
     const {

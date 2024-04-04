@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import {getFolders} from "@/utils/api";
+import { getFolders } from "@/utils/api";
 import ModalFolderItem from "@/components/sharing/modal/ModalFolderItem";
-import {Folder} from "@/utils/types";
+import { TFolder } from "@/utils/types";
 
 const FolderList = styled.div`
   display: flex;
@@ -13,34 +13,34 @@ const FolderList = styled.div`
 `;
 
 function ModalFolderList() {
-    const [folders, setFolders] = useState<Folder[]>([]);
-    const [currentFolder, setCurrentFolder] = useState(1);
-    const handleClickTag = (folder: Folder) => {
-        setCurrentFolder(folder.id);
-    };
-    const loadFolders = async () => {
-        const folderInfo = await getFolders();
-        if (!folderInfo) return;
-        setFolders(folderInfo["data"]);
-    };
+  const [folders, setFolders] = useState<TFolder[]>([]);
+  const [currentFolder, setCurrentFolder] = useState(1);
+  const handleClickTag = (folder: TFolder) => {
+    setCurrentFolder(folder.id);
+  };
+  const loadFolders = async () => {
+    const folderInfo = await getFolders();
+    if (!folderInfo) return;
+    setFolders(folderInfo["data"]);
+  };
 
-    useEffect(() => {
-        loadFolders();
-    }, []);
+  useEffect(() => {
+    loadFolders();
+  }, []);
 
-    if (!folders) return <></>;
-    return (
-        <FolderList>
-            {folders.map((folder: Folder) => (
-                <ModalFolderItem
-                    key={folder.id}
-                    folder={folder}
-                    onClick={() => handleClickTag(folder)}
-                    selected={currentFolder === folder.id}
-                />
-            ))}
-        </FolderList>
-    );
+  if (!folders) return <></>;
+  return (
+    <FolderList>
+      {folders.map((folder: TFolder) => (
+        <ModalFolderItem
+          key={folder.id}
+          folder={folder}
+          onClick={() => handleClickTag(folder)}
+          selected={currentFolder === folder.id}
+        />
+      ))}
+    </FolderList>
+  );
 }
 
 export default ModalFolderList;

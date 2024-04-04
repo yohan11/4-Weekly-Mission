@@ -1,12 +1,13 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import styled from "styled-components";
+import { TChildren } from "@/utils/types";
 
 type PopoverStyledProps = {
-    $isOpen: boolean;
+  $isOpen: boolean;
 };
 
 const PopoverContainer = styled.div<PopoverStyledProps>`
-  display: ${({$isOpen}) => ($isOpen ? "flex" : "none")};
+  display: ${({ $isOpen }) => ($isOpen ? "flex" : "none")};
   flex-direction: column;
   gap: 2px;
 
@@ -23,13 +24,12 @@ const PopoverContainer = styled.div<PopoverStyledProps>`
   border-radius: 5px;
 `;
 
-interface PopoverProps {
-    children: ReactNode;
-    isOpen: boolean;
-}
+type PopoverProps = TChildren & {
+  isOpen: boolean;
+};
 
-const Popover = ({children, isOpen}: PopoverProps) => {
-    return <PopoverContainer $isOpen={isOpen}>{children}</PopoverContainer>;
+const Popover = ({ children, isOpen }: PopoverProps) => {
+  return <PopoverContainer $isOpen={isOpen}>{children}</PopoverContainer>;
 };
 
 export default Popover;

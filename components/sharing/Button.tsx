@@ -1,5 +1,6 @@
-import styled, {css} from "styled-components";
-import React, {MouseEventHandler, ReactNode} from "react";
+import styled, { css } from "styled-components";
+import React from "react";
+import { TButton } from "@/utils/types";
 
 const buttonStyle = css`
   cursor: pointer;
@@ -37,21 +38,14 @@ const Text = styled.button`
 `;
 
 const BUTTON_COMPONENTS = {
-    gradient: GradientButton,
-    icon: Icon,
-    text: Text,
+  gradient: GradientButton,
+  icon: Icon,
+  text: Text,
 };
 
-interface ButtonProps {
-    children: ReactNode;
-    className?: string;
-    variant: "gradient" | "icon" | "text";
-    onClick?: MouseEventHandler<HTMLButtonElement>;
-}
-
-const Button = ({variant, ...props}: ButtonProps) => {
-    const Component = BUTTON_COMPONENTS[variant] || null;
-    return Component ? <Component {...props} /> : null;
+const Button = ({ variant, ...props }: TButton) => {
+  const Component = BUTTON_COMPONENTS[variant] || null;
+  return Component ? <Component {...props} /> : null;
 };
 
 export default Button;

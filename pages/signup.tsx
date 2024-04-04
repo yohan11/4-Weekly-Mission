@@ -14,7 +14,7 @@ import {
     PASSWORD_CONFIRM_ERROR_MESSAGE,
     PASSWORD_FORM_MESSAGE,
     PASSWORD_REGEX
-} from "@/utils/authUtils";
+} from "@/utils/constants";
 
 const SignUp = () => {
     const {
