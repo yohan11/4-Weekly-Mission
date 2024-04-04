@@ -3,7 +3,6 @@ import { formatDate, getTimeDifference } from "@/utils/dateUtils";
 import Card from "@/components/folder/card/Card";
 import styled from "styled-components";
 import { useFolder } from "@/contexts/FolderContext";
-import { getLinksByKeyword } from "@/utils/api";
 import NoLink from "@/components/sharing/NoLink";
 import { TLink } from "@/utils/types";
 import { useRouter } from "next/router";
@@ -25,39 +24,39 @@ const CardListContainer = styled.div`
   }
 `;
 
-const CardList = () => {
+const CardList = ({ links }: { links: TLink[] }) => {
   const { currentFolder } = useFolder();
   const router = useRouter();
   const [currentLinks, setCurrentLinks] = useState<TLink[]>([]);
   const searchParam = router.query["keyword"] || "";
   const [keyword, setKeyword] = useState(searchParam);
 
-  const loadLinks = async () => {
-    const links = await getLinksByKeyword(currentFolder.id, keyword);
-    setCurrentLinks(links);
-  };
+  // const loadLinks = async () => {
+  //   const links = await getLinksByKeyword(currentFolder.id, keyword);
+  //   setCurrentLinks(links);
+  // };
 
   // 쿼리 스트링이 바뀔 때 마다 keyword 세팅
   useEffect(() => {
     setKeyword(searchParam);
   }, [searchParam]);
 
-  useEffect(() => {
-    loadLinks();
-  }, [currentFolder, keyword]);
+  // useEffect(() => {
+  //   loadLinks();
+  // }, [currentFolder, keyword]);
 
-  if (currentLinks.length === 0) return <NoLink />;
+  if (links.length === 0) return <NoLink />;
   return (
     <CardListContainer>
-      {currentLinks.map((link) => {
-        const createdDate = new Date(link.created_at);
+      {links.map((link) => {
+        const createdDate = new Date(link.createdAt);
         const currentDate = new Date();
 
         return (
           <Card
             key={link.id}
             id={link.id}
-            cardImage={link.image_source || ""}
+            cardImage={link.imageSource}
             cardTime={{
               createdDateString: formatDate(createdDate),
               timeDifference: getTimeDifference(createdDate, currentDate),

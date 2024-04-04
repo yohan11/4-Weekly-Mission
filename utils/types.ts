@@ -26,15 +26,25 @@ export type TFolder = {
   link: { count: number };
 };
 
+export type TSampleFolder = {
+  id: number;
+  name?: string;
+  owner: {
+    id: number;
+    name: string;
+    profileImageSource?: string;
+  };
+  links: TLink[];
+  count: number;
+};
+
 export type TLink = {
   id: number;
-  created_at: string;
-  updated_at?: string;
+  createdAt: string;
   url: string;
-  title?: number | null;
-  description?: string | null;
-  image_source?: string | null;
-  folder_id?: number;
+  title: string;
+  description?: string;
+  imageSource?: string;
 };
 
 export type TCard = {

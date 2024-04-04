@@ -95,8 +95,9 @@ const StarButton = styled(Button)<StarButtonProps>`
 `;
 
 const Card = ({ id, cardImage, cardTime, cardDescription, cardUrl }: TCard) => {
-  const imageSrc = cardImage || SAMPLE_IMAGE_URL;
+  const imageSrc = cardImage ? cardImage : SAMPLE_IMAGE_URL;
   const [filledStar, setFilledStar] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const handleClickStar = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -113,7 +114,12 @@ const Card = ({ id, cardImage, cardTime, cardDescription, cardUrl }: TCard) => {
         rel="noopener noreferrer"
       >
         <ImageContainer>
-          <StyledImage src={imageSrc} fill alt="card profile" />
+          <StyledImage
+            src={imageError ? SAMPLE_IMAGE_URL : imageSrc}
+            fill
+            alt="card profile"
+            onError={() => setImageError(true)}
+          />
           <StarButton
             variant="icon"
             $filled={filledStar}

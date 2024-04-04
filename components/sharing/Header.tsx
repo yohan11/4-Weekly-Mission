@@ -35,7 +35,7 @@ const HeaderContainer = styled.header<HeaderStyledProps>`
 `;
 
 type HeaderProps = {
-  userInfo: TUser | null;
+  userInfo: TUser | undefined;
   fixed: boolean;
 };
 
