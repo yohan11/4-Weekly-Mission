@@ -3,7 +3,6 @@ import AddLinkForm from "@/components/folder/input/AddLinkForm";
 import SearchInputForm from "@/components/folder/input/SearchInputForm";
 import TagList from "@/components/folder/tag/TagList";
 import Actions from "@/components/folder/Actions";
-import CardList from "@/components/folder/card/CardList";
 import FolderHeaderLayout from "@/components/folder/layout/FolderHeaderLayout";
 import MainLayout from "@/components/folder/layout/MainLayout";
 import ModalContainer from "@/components/sharing/modal/Modal";
@@ -11,14 +10,15 @@ import * as Modal from "@/components/sharing/modal/ModalContents";
 import ModalButton from "@/components/sharing/modal/ModalButton";
 import useModal from "@/hooks/useModal";
 import { useFolder } from "@/contexts/FolderContext";
-import { useEffect, useState } from "react";
 import Header from "@/components/sharing/Header";
 import Button from "@/components/sharing/Button";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import { media } from "@/styles/device";
-import { getUser } from "@/utils/api";
-import { TUser } from "@/utils/types";
+import { getLinks, getUser } from "@/utils/api";
+import { TLink, TUser } from "@/utils/types";
+import { useEffect, useState } from "react";
+import CardList from "@/components/folder/card/CardList";
 
 const AddFolderButton = styled(Button)`
   display: flex;
@@ -71,26 +71,35 @@ const FolderAction = styled.div`
   }
 `;
 
-const Folder = () => {
-  const [user, setUser] = useState<TUser>();
+export async function getServerSideProps() {
+  const userInfo = await getUser();
+
+  return {
+    props: {
+      userInfo,
+    },
+  };
+}
+
+const Folder = ({ userInfo }: { userInfo: TUser }) => {
   const { openModal, handleModalOpen, handleModalClose } = useModal();
   const { currentFolder } = useFolder();
-  const router = useRouter();
-  const searchParam = router.query["keyword"];
-
-  const loadUser = async () => {
-    const userInfo = await getUser();
-    const { email, profileImageSource } = userInfo;
-    if (userInfo) setUser({ email, profileImageSource });
+  const [links, setLinks] = useState<TLink[]>();
+  const loadLinks = async () => {
+    const linksInfo = await getLinks(currentFolder.id);
+    setLinks(linksInfo);
   };
 
   useEffect(() => {
-    loadUser();
-  }, []);
+    loadLinks();
+  }, [currentFolder]);
+
+  const router = useRouter();
+  const searchParam = router.query["keyword"];
 
   return (
     <>
-      <Header userInfo={user} fixed={false} />
+      <Header userInfo={userInfo} fixed={false} />
       <FolderHeaderLayout>
         <AddLinkForm />
       </FolderHeaderLayout>
@@ -112,7 +121,7 @@ const Folder = () => {
           <span className="font-24px font-regular">{currentFolder.name}</span>
           {currentFolder.id !== 1 ? <Actions /> : null}
         </FolderAction>
-        <CardList />
+        <CardList links={links} />
       </MainLayout>
       <Footer />
 

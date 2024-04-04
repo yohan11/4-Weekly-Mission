@@ -38,11 +38,15 @@ export type TSampleFolder = {
 
 export type TLink = {
   id: number;
-  createdAt: string;
+  created_at?: string;
+  createdAt?: string;
+  updated_at?: string;
   url: string;
-  title: string;
+  title?: string;
   description?: string;
+  image_source?: string;
   imageSource?: string;
+  folder_id?: number;
 };
 
 export type TCard = {

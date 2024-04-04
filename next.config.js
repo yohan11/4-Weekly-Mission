@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: [
-      "**",
+      "jasonwatmore.com",
       "codeit-images.codeit.com",
       "codeit-frontend.codeit.com",
       "reactjs.org",

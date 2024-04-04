@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { formatDate, getTimeDifference } from "@/utils/dateUtils";
 import Card from "@/components/folder/card/Card";
 import styled from "styled-components";
-import { useFolder } from "@/contexts/FolderContext";
 import NoLink from "@/components/sharing/NoLink";
 import { TLink } from "@/utils/types";
 import { useRouter } from "next/router";
@@ -24,10 +23,8 @@ const CardListContainer = styled.div`
   }
 `;
 
-const CardList = ({ links }: { links: TLink[] }) => {
-  const { currentFolder } = useFolder();
+const CardList = ({ links }: { links: TLink[] | undefined }) => {
   const router = useRouter();
-  const [currentLinks, setCurrentLinks] = useState<TLink[]>([]);
   const searchParam = router.query["keyword"] || "";
   const [keyword, setKeyword] = useState(searchParam);
 
@@ -45,18 +42,21 @@ const CardList = ({ links }: { links: TLink[] }) => {
   //   loadLinks();
   // }, [currentFolder, keyword]);
 
-  if (links.length === 0) return <NoLink />;
+  if (links?.length === 0) return <NoLink />;
   return (
     <CardListContainer>
-      {links.map((link) => {
-        const createdDate = new Date(link.createdAt);
+      {links?.map((link) => {
+        const createdAt = link.created_at || link.createdAt;
+        const imageSource = link.image_source || link.imageSource;
+
+        const createdDate = new Date(createdAt as string);
         const currentDate = new Date();
 
         return (
           <Card
             key={link.id}
             id={link.id}
-            cardImage={link.imageSource}
+            cardImage={imageSource}
             cardTime={{
               createdDateString: formatDate(createdDate),
               timeDifference: getTimeDifference(createdDate, currentDate),
