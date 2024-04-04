@@ -15,9 +15,12 @@ import {
   PASSWORD_FORM_MESSAGE,
   PASSWORD_REGEX,
 } from "@/utils/constants";
-import { checkEmail } from "@/utils/api";
+import { checkEmail, postSignUp } from "@/utils/api";
+import { useRouter } from "next/router";
 
 const SignUp = () => {
+  const router = useRouter();
+
   const {
     register,
     formState: { errors },
@@ -52,8 +55,13 @@ const SignUp = () => {
     },
   });
 
-  const onChangeFormLib = () => {
-    console.log("회원가입 정보");
+  const onChangeFormLib = async (data: any) => {
+    const token = await postSignUp(data);
+    if (token) {
+      localStorage.setItem("accessToken", token.accessToken);
+      localStorage.setItem("refreshToken", token.refreshToken);
+      router.push("/folder");
+    }
   };
 
   return (

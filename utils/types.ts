@@ -95,7 +95,7 @@ export type TButton = TChildren & {
     | ((e: React.MouseEvent<HTMLElement>) => void);
 };
 
-export type TLogin = {
+export type TAuth = {
   email: string;
   password: string;
 };

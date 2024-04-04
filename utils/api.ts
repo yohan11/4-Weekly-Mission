@@ -1,8 +1,8 @@
 import axios from "@/utils/axios";
 import {
+  TAuth,
   TFolder,
   TLink,
-  TLogin,
   TSampleFolder,
   TToken,
   TUser,
@@ -74,7 +74,7 @@ export const getLinks = async (
     });
 };
 
-export const postSignIn = async (values: TLogin): Promise<TToken | null> => {
+export const postSignIn = async (values: TAuth): Promise<TToken | null> => {
   return await axios
     .post("/sign-in", JSON.stringify(values), {
       headers: {
@@ -100,6 +100,21 @@ export const checkEmail = async (values: string): Promise<boolean | null> => {
     .then((responseData): boolean => responseData.data)
     .catch((error: Error) => {
       if (error.message === ERROR_409_MESSAGE) return null;
+      throw NETWORK_ERROR(error);
+    });
+};
+
+export const postSignUp = async (values: TAuth): Promise<TToken | null> => {
+  return await axios
+    .post("/sign-up", JSON.stringify(values), {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then((response) => response.data)
+    .then((responseData): TToken => responseData.data)
+    .catch((error: Error) => {
+      if (error.message === ERROR_400_MESSAGE) return null;
       throw NETWORK_ERROR(error);
     });
 };
