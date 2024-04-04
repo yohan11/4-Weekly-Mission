@@ -104,7 +104,9 @@ const SignUp = () => {
           register={passwordCheckRegister}
           error={errors.passwordCheck as FieldError}
         />
-        <Button variant="gradient"> 회원가입 </Button>
+        <Button variant="gradient" type="submit">
+          회원가입
+        </Button>
       </AS.StyledForm>
       <SocialLogin message="다른 방식으로 가입하기" />
     </AS.SignInContainer>

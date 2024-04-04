@@ -43,7 +43,7 @@ const BUTTON_COMPONENTS = {
   text: Text,
 };
 
-const Button = ({ variant, ...props }: TButton) => {
+const Button = ({ variant, type, ...props }: TButton) => {
   const Component = BUTTON_COMPONENTS[variant] || null;
   return Component ? <Component {...props} /> : null;
 };

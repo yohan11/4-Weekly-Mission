@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="feat: 이메일 중복 검사 기능 구현">
+    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="feat: 회원가입 기능 구현">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sharing/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sharing/input/LoginInputForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/input/LoginInputForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signin.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,15 +172,8 @@
       <workItem from="1712248651432" duration="3617000" />
       <workItem from="1712252279147" duration="1537000" />
       <workItem from="1712253823210" duration="5259000" />
-      <workItem from="1712259100036" duration="5550000" />
-    </task>
-    <task id="LOCAL-00037" summary="design: padding 수정">
-      <option name="closed" value="true" />
-      <created>1708189811415</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1708189811415</updated>
+      <workItem from="1712259100036" duration="5730000" />
+      <workItem from="1712264855419" duration="1208000" />
     </task>
     <task id="LOCAL-00038" summary="style: 코드 정리">
       <option name="closed" value="true" />
@@ -564,7 +559,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712264470904</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="feat: 회원가입 기능 구현">
+      <option name="closed" value="true" />
+      <created>1712264770491</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1712264770491</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +586,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix: Modal 디자인 깨지는 문제 수정" />
     <MESSAGE value="refactor: Modal 스크롤 방지 및 외부 클릭 시 닫기 기능 추가" />
     <MESSAGE value="feat: 링크 복사 토스트 알림 구현" />
     <MESSAGE value="refactor: next 이미지 최적화" />
@@ -608,6 +610,7 @@
     <MESSAGE value="design: 인덱스 페이지 검색 결과 디자인 추가" />
     <MESSAGE value="feat: 로그인 기능 구현" />
     <MESSAGE value="feat: 이메일 중복 검사 기능 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 이메일 중복 검사 기능 구현" />
+    <MESSAGE value="feat: 회원가입 기능 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 회원가입 기능 구현" />
   </component>
 </project>

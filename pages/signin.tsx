@@ -95,7 +95,9 @@ const SignIn = () => {
           register={passwordRegister}
           error={errors.password as FieldError}
         />
-        <Button variant="gradient"> 로그인 </Button>
+        <Button variant="gradient" type="submit">
+          로그인
+        </Button>
       </AS.StyledForm>
       <SocialLogin message="소셜 로그인" />
     </AS.SignInContainer>

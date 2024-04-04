@@ -88,6 +88,7 @@ export type TUserProfile = {
 };
 
 export type TButton = TChildren & {
+  type?: string;
   className?: string;
   variant: "gradient" | "icon" | "text";
   onClick?:

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import * as Icons from "@/components/sharing/Icons";
-import Button from "@/components/sharing/Button";
 import { TLoginInput } from "@/utils/types";
 
 type InputStyledProps = {
@@ -34,11 +33,10 @@ const PasswordInputContainer = styled.div`
   position: relative;
 `;
 
-const EyesButton = styled(Button)`
+const EyesButton = styled.div`
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 5px;
+  top: 36%;
+  right: 15px;
 `;
 
 const LabelAndInput = styled.div`
@@ -87,7 +85,6 @@ const LoginInputForm = ({
               {...register}
             />
             <EyesButton
-              variant="icon"
               onClick={(e: React.MouseEvent<HTMLElement>) => {
                 e.preventDefault();
                 setEyeOff(!eyeOff);
