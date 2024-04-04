@@ -94,3 +94,13 @@ export type TButton = TChildren & {
     | (<T extends unknown>(arg: T) => void)
     | ((e: React.MouseEvent<HTMLElement>) => void);
 };
+
+export type TLogin = {
+  email: string;
+  password: string;
+};
+
+export type TToken = {
+  accessToken: string;
+  refreshToken: string;
+};
