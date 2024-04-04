@@ -53,7 +53,7 @@ const AddFolderButton = styled(Button)`
   }
 `;
 
-const SearchMessage = styled.h1`
+export const SearchMessage = styled.h1`
   margin: 0;
   @media ${media.mobile} {
     font-size: 24px;

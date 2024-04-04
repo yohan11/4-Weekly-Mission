@@ -11,6 +11,7 @@ import Header from "@/components/sharing/Header";
 import Avatar from "@/components/sharing/user/Avatar";
 import { useRouter } from "next/router";
 import { FILTER_LINKS } from "@/utils/constants";
+import { SearchMessage } from "@/pages/folder";
 
 export async function getServerSideProps() {
   const folderInfo = await getSampleFolder();
@@ -73,6 +74,12 @@ const Index = ({
         </FolderHeaderLayout>
         <MainLayout>
           <SearchInputForm />
+          {keyword ? (
+            <SearchMessage>
+              {keyword}
+              <span className="font-color-gray4">으로 검색한 결과입니다.</span>
+            </SearchMessage>
+          ) : null}
           <CardList links={links} />
         </MainLayout>
       </div>

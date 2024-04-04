@@ -2,8 +2,6 @@ import axios from "@/utils/axios";
 import { TFolder, TLink, TSampleFolder, TUser } from "@/utils/types";
 import { FILTER_LINKS, HTTP_ERROR } from "@/utils/constants";
 
-const API_BASE_URL = "https://bootcamp-api.codeit.kr/api";
-
 export const getUser = async (): Promise<TUser> => {
   return axios
     .get("users/1")
@@ -47,10 +45,10 @@ export const getLinks = async (
   const URL =
     folderId === 1 ? `users/1/links` : `users/1/links?folderId=${folderId}`;
 
-  return await axios
+  return axios
     .get(URL)
-    .then((response) => {
-      const responseData = response.data;
+    .then((response) => response.data)
+    .then((responseData) => {
       const result = responseData.data;
       if (keyword) {
         const loweredKeyword = keyword.toLowerCase();

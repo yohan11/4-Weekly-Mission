@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="refactor: 폴더 페이지 폴더 목록 조회 api 수정">
+    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="refactor: 검색기능 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/folder/input/SearchInputForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/folder/input/SearchInputForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/folder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/folder.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/constants.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,15 +169,8 @@
       <workItem from="1712228181507" duration="6911000" />
       <workItem from="1712248651432" duration="3617000" />
       <workItem from="1712252279147" duration="1537000" />
-      <workItem from="1712253823210" duration="5201000" />
-    </task>
-    <task id="LOCAL-00033" summary="feat: 폴더 리스트 API 연결">
-      <option name="closed" value="true" />
-      <created>1708177209066</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1708177209066</updated>
+      <workItem from="1712253823210" duration="5259000" />
+      <workItem from="1712259100036" duration="224000" />
     </task>
     <task id="LOCAL-00034" summary="feat: 폴더 별 링크 API 연결">
       <option name="closed" value="true" />
@@ -565,7 +556,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712256365906</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="refactor: 검색기능 수정">
+      <option name="closed" value="true" />
+      <created>1712259070975</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1712259070975</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +583,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="refactor: 9주차 미션 코드리뷰 일부 반영" />
     <MESSAGE value="feat: Next.js 프로젝트 적용" />
     <MESSAGE value="refactor: 13주차 코드리뷰 반영" />
     <MESSAGE value="feat: 로그인, 회원가입 input 컴포넌트 생성" />
@@ -609,6 +607,7 @@
     <MESSAGE value="fix: 헤더 유저 정보 안뜨는 문제 해결" />
     <MESSAGE value="refactor: 폴더 페이지 api 수정" />
     <MESSAGE value="refactor: 폴더 페이지 폴더 목록 조회 api 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: 폴더 페이지 폴더 목록 조회 api 수정" />
+    <MESSAGE value="refactor: 검색기능 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 검색기능 수정" />
   </component>
 </project>
