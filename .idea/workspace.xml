@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="refactor: 폴더 페이지 api 수정">
+    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="refactor: 폴더 페이지 폴더 목록 조회 api 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/folder/tag/TagList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/folder/tag/TagList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/folder/input/SearchInputForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/folder/input/SearchInputForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/folder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/folder.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/constants.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,15 +171,7 @@
       <workItem from="1712228181507" duration="6911000" />
       <workItem from="1712248651432" duration="3617000" />
       <workItem from="1712252279147" duration="1537000" />
-      <workItem from="1712253823210" duration="2375000" />
-    </task>
-    <task id="LOCAL-00032" summary="design: Folder 페이지에서 상단 네비게이션 고정 해제">
-      <option name="closed" value="true" />
-      <created>1708175316001</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1708175316001</updated>
+      <workItem from="1712253823210" duration="5201000" />
     </task>
     <task id="LOCAL-00033" summary="feat: 폴더 리스트 API 연결">
       <option name="closed" value="true" />
@@ -563,7 +557,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712255506821</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="refactor: 폴더 페이지 폴더 목록 조회 api 수정">
+      <option name="closed" value="true" />
+      <created>1712256365906</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1712256365906</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +584,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="design: 반응형 디자인 수정" />
     <MESSAGE value="refactor: 9주차 미션 코드리뷰 일부 반영" />
     <MESSAGE value="feat: Next.js 프로젝트 적용" />
     <MESSAGE value="refactor: 13주차 코드리뷰 반영" />
@@ -607,6 +608,7 @@
     <MESSAGE value="refactor: 인덱스 페이지 api 수정" />
     <MESSAGE value="fix: 헤더 유저 정보 안뜨는 문제 해결" />
     <MESSAGE value="refactor: 폴더 페이지 api 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: 폴더 페이지 api 수정" />
+    <MESSAGE value="refactor: 폴더 페이지 폴더 목록 조회 api 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 폴더 페이지 폴더 목록 조회 api 수정" />
   </component>
 </project>

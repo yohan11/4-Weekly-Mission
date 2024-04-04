@@ -93,17 +93,17 @@ const Folder = ({
   const { openModal, handleModalOpen, handleModalClose } = useModal();
   const { currentFolder } = useFolder();
   const [links, setLinks] = useState<TLink[]>();
+  const router = useRouter();
+  const keyword = (router.query["keyword"] as string) || null;
+
   const loadLinks = async () => {
-    const linksInfo = await getLinks(currentFolder.id);
+    const linksInfo = await getLinks(currentFolder.id, keyword);
     setLinks(linksInfo);
   };
 
   useEffect(() => {
     loadLinks();
-  }, [currentFolder]);
-
-  const router = useRouter();
-  const searchParam = router.query["keyword"];
+  }, [currentFolder, keyword]);
 
   return (
     <>
@@ -113,9 +113,9 @@ const Folder = ({
       </FolderHeaderLayout>
       <MainLayout>
         <SearchInputForm />
-        {searchParam ? (
+        {keyword ? (
           <SearchMessage>
-            {searchParam}
+            {keyword}
             <span className="font-color-gray4">으로 검색한 결과입니다.</span>
           </SearchMessage>
         ) : null}

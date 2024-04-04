@@ -1,5 +1,5 @@
 import Footer from "@/components/sharing/Footer";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { getSampleFolder, getUser } from "@/utils/api";
 import SearchInputForm from "@/components/folder/input/SearchInputForm";
 import CardList from "@/components/folder/card/CardList";
@@ -9,6 +9,8 @@ import styled from "styled-components";
 import { TSampleFolder, TUser } from "@/utils/types";
 import Header from "@/components/sharing/Header";
 import Avatar from "@/components/sharing/user/Avatar";
+import { useRouter } from "next/router";
+import { FILTER_LINKS } from "@/utils/constants";
 
 export async function getServerSideProps() {
   const folderInfo = await getSampleFolder();
@@ -36,6 +38,22 @@ const Index = ({
   folderInfo: TSampleFolder;
   userInfo: TUser;
 }) => {
+  const router = useRouter();
+  const keyword = (router.query["keyword"] as string) || null;
+  const [links, setLinks] = useState(folderInfo.links);
+
+  const loadNewLinks = () => {
+    if (keyword) {
+      const loweredKeyword = keyword.toLowerCase();
+      setLinks((prevState) => FILTER_LINKS(prevState, loweredKeyword));
+    } else {
+      setLinks(folderInfo.links);
+    }
+  };
+
+  useEffect(() => {
+    loadNewLinks();
+  }, [keyword]);
   return (
     <>
       <Header userInfo={userInfo} fixed={true} />
@@ -55,7 +73,7 @@ const Index = ({
         </FolderHeaderLayout>
         <MainLayout>
           <SearchInputForm />
-          <CardList links={folderInfo.links} />
+          <CardList links={links} />
         </MainLayout>
       </div>
       <Footer />

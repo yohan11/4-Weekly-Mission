@@ -1,5 +1,6 @@
 // 유저 기능 관련 상수
-import Errors from "undici-types/errors";
+
+import { TLink } from "@/utils/types";
 
 export const EMAIL_REGEX = /^\S+@\S+$/i;
 export const PASSWORD_REGEX = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d\S]{8,}$/i;
@@ -15,7 +16,16 @@ export const PASSWORD_CONFIRM_ERROR_MESSAGE = "비밀번호가 일치하지 않�
 // UI 관련 상수
 export const AVATAR_DEFAULT_SIZE = 28;
 
-// Error 관련 함수
+// API 관련 함수
 export const HTTP_ERROR = (error: Error) => {
   return new Error(`HTTP 에러: ${error.name} - ${error.message}`);
+};
+
+export const FILTER_LINKS = (data: TLink[], keyword: string) => {
+  return data.filter(
+    (item) =>
+      (item.description && item.description.toLowerCase().includes(keyword)) ||
+      (item.title && item.title.toLowerCase().includes(keyword)) ||
+      (item.url && item.url.toLowerCase().includes(keyword)),
+  );
 };
