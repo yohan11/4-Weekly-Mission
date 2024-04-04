@@ -1,5 +1,5 @@
 import axios from "@/utils/axios";
-import { TSampleFolder, TUser } from "@/utils/types";
+import { TFolder, TLink, TSampleFolder, TUser } from "@/utils/types";
 import { HTTP_ERROR } from "@/utils/constants";
 
 const API_BASE_URL = "https://bootcamp-api.codeit.kr/api";
@@ -28,26 +28,23 @@ export const getSampleFolder = async (): Promise<TSampleFolder> => {
     });
 };
 
-export const getFolders = async () => {
-  try {
-    const response = await fetch(`${API_BASE_URL}/users/1/folders`);
-    if (response.ok) {
-      return response.json();
-    }
-    return new Error("폴더를 불러올 수 없습니다."); // 예상 가능한 에러
-  } catch (e) {
-    // 예상 불가능한 에러 처리
-    if (e instanceof Error) {
-      return e;
-    }
-  }
+export const getFolders = async (): Promise<TFolder[]> => {
+  return await axios
+    .get("users/1/folders")
+    .then((response) => {
+      const responseData = response.data;
+      return responseData.data;
+    })
+    .catch((error) => {
+      throw HTTP_ERROR(error);
+    });
 };
 
-export const getLinks = async (folderId: number) => {
+export const getLinks = async (
+  folderId: number,
+): Promise<TLink[] | undefined> => {
   const URL =
-    folderId === 1
-      ? `${API_BASE_URL}/users/1/links`
-      : `${API_BASE_URL}/users/1/links?folderId=${folderId}`;
+    folderId === 1 ? `users/1/links` : `users/1/links?folderId=${folderId}`;
 
   return await axios
     .get(URL)

@@ -15,8 +15,8 @@ import Button from "@/components/sharing/Button";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import { media } from "@/styles/device";
-import { getLinks, getUser } from "@/utils/api";
-import { TLink, TUser } from "@/utils/types";
+import { getFolders, getLinks, getUser } from "@/utils/api";
+import { TFolder, TLink, TUser } from "@/utils/types";
 import { useEffect, useState } from "react";
 import CardList from "@/components/folder/card/CardList";
 
@@ -73,15 +73,23 @@ const FolderAction = styled.div`
 
 export async function getServerSideProps() {
   const userInfo = await getUser();
+  const foldersInfo = await getFolders();
 
   return {
     props: {
       userInfo,
+      foldersInfo,
     },
   };
 }
 
-const Folder = ({ userInfo }: { userInfo: TUser }) => {
+const Folder = ({
+  userInfo,
+  foldersInfo,
+}: {
+  userInfo: TUser;
+  foldersInfo: TFolder[];
+}) => {
   const { openModal, handleModalOpen, handleModalClose } = useModal();
   const { currentFolder } = useFolder();
   const [links, setLinks] = useState<TLink[]>();
@@ -112,7 +120,7 @@ const Folder = ({ userInfo }: { userInfo: TUser }) => {
           </SearchMessage>
         ) : null}
         <div className="space-between">
-          <TagList />
+          <TagList foldersInfo={foldersInfo} />
           <AddFolderButton variant="text" onClick={handleModalOpen}>
             폴더 추가 +
           </AddFolderButton>
