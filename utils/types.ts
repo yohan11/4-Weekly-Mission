@@ -12,7 +12,9 @@ export type TOnClick = {
 };
 
 export type TUser = {
-  email: string | null;
+  id: number;
+  name: string;
+  email?: string | null;
   profileImageSource?: string | null;
   image_source?: string | null;
 };
@@ -29,11 +31,7 @@ export type TFolder = {
 export type TSampleFolder = {
   id: number;
   name?: string;
-  owner: {
-    id: number;
-    name: string;
-    profileImageSource?: string;
-  };
+  owner: TUser;
   links: TLink[];
   count: number;
 };

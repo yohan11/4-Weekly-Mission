@@ -1,48 +1,54 @@
 import Footer from "@/components/sharing/Footer";
-import { useEffect, useState } from "react";
+import React from "react";
 import { getSampleFolder, getUser } from "@/utils/api";
 import SearchInputForm from "@/components/folder/input/SearchInputForm";
 import CardList from "@/components/folder/card/CardList";
-import UserProfile from "@/components/sharing/user/UserProfile";
 import FolderHeaderLayout from "@/components/folder/layout/FolderHeaderLayout";
 import MainLayout from "@/components/folder/layout/MainLayout";
 import styled from "styled-components";
 import { TSampleFolder, TUser } from "@/utils/types";
 import Header from "@/components/sharing/Header";
+import Avatar from "@/components/sharing/user/Avatar";
 
 export async function getServerSideProps() {
-  const res = await getSampleFolder();
-  const folderInfo = res;
+  const folderInfo = await getSampleFolder();
+  const userInfo = await getUser();
 
   return {
     props: {
       folderInfo,
+      userInfo,
     },
   };
 }
 
-const FolderOwner = styled(UserProfile)`
+const FolderOwner = styled.div`
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 12px;
 `;
 
-const Index = ({ folderInfo }: { folderInfo: TSampleFolder }) => {
-  const [user, setUser] = useState<TUser>();
-  const loadUser = async () => {
-    const userInfo = await getUser();
-    const { email, image_source } = userInfo;
-    if (userInfo) setUser({ email, image_source });
-  };
-
-  useEffect(() => {
-    loadUser();
-  }, []);
-
+const Index = ({
+  folderInfo,
+  userInfo,
+}: {
+  folderInfo: TSampleFolder;
+  userInfo: TUser;
+}) => {
   return (
     <>
-      <Header userInfo={user} fixed={true} />
+      <Header userInfo={userInfo} fixed={true} />
       <div className="component-default-margin">
         <FolderHeaderLayout>
-          {/*<FolderOwner userInfo={user} size={62} />*/}
+          <FolderOwner>
+            <Avatar
+              avatarImage={folderInfo.owner.profileImageSource || ""}
+              width={62}
+              height={62}
+            />
+            <span>@{folderInfo.owner.name}</span>
+          </FolderOwner>
           <div className="font-regular font-40px margin-auto">
             {folderInfo?.name}
           </div>

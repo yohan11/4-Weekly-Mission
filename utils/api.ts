@@ -8,7 +8,7 @@ export const getUser = async (): Promise<TUser> => {
     .get("users/1")
     .then((response) => {
       const responseData = response.data;
-      return responseData.data;
+      return responseData.data[0];
     })
     .catch((error) => {
       throw new Error(`HTTP 에러: ${error.status} - ${error.message}`);

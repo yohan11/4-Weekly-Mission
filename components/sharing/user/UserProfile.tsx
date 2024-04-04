@@ -20,7 +20,7 @@ const ProfileText = styled.span`
 `;
 
 const UserProfile = ({ userInfo, className, size }: TUserProfile) => {
-  const avatarImage = userInfo["image_source"] || undefined;
+  const avatarImage = userInfo.image_source || undefined;
 
   return (
     <ProfileContainer className={className}>
@@ -29,7 +29,7 @@ const UserProfile = ({ userInfo, className, size }: TUserProfile) => {
         width={size || AVATAR_DEFAULT_SIZE}
         height={size || AVATAR_DEFAULT_SIZE}
       />
-      <ProfileText>{userInfo["email"]}</ProfileText>
+      <ProfileText>{userInfo.email}</ProfileText>
     </ProfileContainer>
   );
 };

@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="refactor: 코드리뷰 반영 - 코드 스타일, css, 상수화, type 통일">
-      <change afterPath="$PROJECT_DIR$/utils/axios.ts" afterDir="false" />
+    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="refactor: 인덱스 페이지 api 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/folder/card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/folder/card/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/folder/card/CardList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/folder/card/CardList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sharing/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/folder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/folder.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sharing/user/UserProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/user/UserProfile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/types.ts" afterDir="false" />
@@ -175,15 +168,8 @@
       <workItem from="1712074945552" duration="6334000" />
       <workItem from="1712081293815" duration="989000" />
       <workItem from="1712228181507" duration="6911000" />
-      <workItem from="1712248651432" duration="3494000" />
-    </task>
-    <task id="LOCAL-00029" summary="feat: Card 컴포넌트 내 별, 케밥 아이콘 추가">
-      <option name="closed" value="true" />
-      <created>1708170962140</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1708170962140</updated>
+      <workItem from="1712248651432" duration="3617000" />
+      <workItem from="1712252279147" duration="1486000" />
     </task>
     <task id="LOCAL-00030" summary="design: 기기별 반응형 디자인 적용">
       <option name="closed" value="true" />
@@ -569,7 +555,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712247797338</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="refactor: 인덱스 페이지 api 수정">
+      <option name="closed" value="true" />
+      <created>1712252259310</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1712252259310</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,7 +582,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: 검색어 지우기 기능 구현" />
     <MESSAGE value="feat: TypeScript 마이그레이션" />
     <MESSAGE value="feat: 검색 시 검색어 UI 구현" />
     <MESSAGE value="design: 반응형 디자인 수정" />
@@ -613,6 +606,7 @@
     <MESSAGE value="feat: 소셜 로그인 및 메인 로고 링크 연결" />
     <MESSAGE value="feat: 반응형 디자인 적용" />
     <MESSAGE value="refactor: 코드리뷰 반영 - 코드 스타일, css, 상수화, type 통일" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: 코드리뷰 반영 - 코드 스타일, css, 상수화, type 통일" />
+    <MESSAGE value="refactor: 인덱스 페이지 api 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 인덱스 페이지 api 수정" />
   </component>
 </project>
