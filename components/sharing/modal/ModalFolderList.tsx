@@ -20,8 +20,7 @@ function ModalFolderList() {
   };
   const loadFolders = async () => {
     const folderInfo = await getFolders();
-    if (!folderInfo) return;
-    setFolders(folderInfo["data"]);
+    if (folderInfo) setFolders(folderInfo);
   };
 
   useEffect(() => {
