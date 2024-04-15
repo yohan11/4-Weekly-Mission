@@ -1,13 +1,11 @@
-import React, {useEffect, useState} from "react";
-import {formatDate, getTimeDifference} from "@/utils/dateUtils";
+import React, { useEffect, useState } from "react";
+import { formatDate, getTimeDifference } from "@/utils/dateUtils";
 import Card from "@/components/folder/card/Card";
 import styled from "styled-components";
-import {useFolder} from "@/contexts/FolderContext";
-import {getLinksByKeyword} from "@/utils/api";
 import NoLink from "@/components/sharing/NoLink";
-import {Link} from "@/utils/types";
-import {useRouter} from "next/router";
-import {media} from "@/styles/device";
+import { TLink } from "@/utils/types";
+import { useRouter } from "next/router";
+import { media } from "@/styles/device";
 
 const CardListContainer = styled.div`
   width: 100%;
@@ -25,51 +23,51 @@ const CardListContainer = styled.div`
   }
 `;
 
-const CardList = () => {
-    const {currentFolder} = useFolder();
-    const router = useRouter();
-    const [currentLinks, setCurrentLinks] = useState<Link[]>([]);
-    const searchParam = router.query["keyword"] || "";
-    const [keyword, setKeyword] = useState(searchParam);
+const CardList = ({ links }: { links: TLink[] | undefined }) => {
+  const router = useRouter();
+  const searchParam = router.query["keyword"] || "";
+  const [keyword, setKeyword] = useState(searchParam);
 
-    const loadLinks = async () => {
-        const links = await getLinksByKeyword(currentFolder.id, keyword);
-        setCurrentLinks(links);
-    };
+  // const loadLinks = async () => {
+  //   const links = await getLinksByKeyword(currentFolder.id, keyword);
+  //   setCurrentLinks(links);
+  // };
 
-    // 쿼리 스트링이 바뀔 때 마다 keyword 세팅
-    useEffect(() => {
-        setKeyword(searchParam);
-    }, [searchParam]);
+  // 쿼리 스트링이 바뀔 때 마다 keyword 세팅
+  useEffect(() => {
+    setKeyword(searchParam);
+  }, [searchParam]);
 
-    useEffect(() => {
-        loadLinks();
-    }, [currentFolder, keyword]);
+  // useEffect(() => {
+  //   loadLinks();
+  // }, [currentFolder, keyword]);
 
-    if (currentLinks.length === 0) return <NoLink/>;
-    return (
-        <CardListContainer>
-            {currentLinks.map((link) => {
-                const {id, created_at, description, image_source, url} = link;
-                const createdDate = new Date(created_at);
-                const currentDate = new Date();
+  if (links?.length === 0) return <NoLink />;
+  return (
+    <CardListContainer>
+      {links?.map((link) => {
+        const createdAt = link.created_at || link.createdAt;
+        const imageSource = link.image_source || link.imageSource;
 
-                const createdDateString = formatDate(createdDate);
-                const timeDifference = getTimeDifference(createdDate, currentDate);
+        const createdDate = new Date(createdAt as string);
+        const currentDate = new Date();
 
-                return (
-                    <Card
-                        key={id}
-                        id={id}
-                        cardImage={image_source || ""}
-                        cardTime={{createdDateString, timeDifference}}
-                        cardDescription={description || ""}
-                        cardUrl={url}
-                    />
-                );
-            })}
-        </CardListContainer>
-    );
+        return (
+          <Card
+            key={link.id}
+            id={link.id}
+            cardImage={imageSource}
+            cardTime={{
+              createdDateString: formatDate(createdDate),
+              timeDifference: getTimeDifference(createdDate, currentDate),
+            }}
+            cardDescription={link.description || ""}
+            cardUrl={link.url}
+          />
+        );
+      })}
+    </CardListContainer>
+  );
 };
 
 export default CardList;

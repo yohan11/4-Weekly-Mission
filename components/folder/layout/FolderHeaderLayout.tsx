@@ -1,5 +1,6 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import styled from "styled-components";
+import { TChildren } from "@/utils/types";
 
 const FolderHeader = styled.div`
   display: flex;
@@ -10,8 +11,8 @@ const FolderHeader = styled.div`
   background-color: var(--color-background);
 `;
 
-const FolderHeaderLayout = ({children}: { children: ReactNode }) => {
-    return <FolderHeader>{children}</FolderHeader>;
+const FolderHeaderLayout = ({ children }: TChildren) => {
+  return <FolderHeader>{children}</FolderHeader>;
 };
 
 export default FolderHeaderLayout;

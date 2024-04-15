@@ -1,7 +1,7 @@
-import React, {MouseEventHandler} from "react";
+import React from "react";
 import styled from "styled-components";
-import {Folder} from "@/utils/types";
-import {Check} from "@/components/sharing/Icons"
+import { TFolder, TOnClick } from "@/utils/types";
+import { Check } from "@/components/sharing/Icons";
 
 const Container = styled.div`
   display: flex;
@@ -44,27 +44,26 @@ const CheckIcon = styled(Check)`
   right: 8px;
 `;
 
-interface ModalFolderItemProps {
-    folder: Folder;
-    selected: boolean;
-    onClick: MouseEventHandler<HTMLElement>;
-}
+type ModalFolderItemProps = TOnClick & {
+  folder: TFolder;
+  selected: boolean;
+};
 
-function ModalFolderItem({folder, selected, onClick}: ModalFolderItemProps) {
-    const {name, link} = folder;
+function ModalFolderItem({ folder, selected, onClick }: ModalFolderItemProps) {
+  const { name, link } = folder;
 
-    return selected ? (
-        <FocusContainer onClick={onClick}>
-            <FocusFolderName>{name}</FocusFolderName>
-            <FolderLink>{link.count}개 링크</FolderLink>
-            <CheckIcon/>
-        </FocusContainer>
-    ) : (
-        <Container onClick={onClick}>
-            <FolderName>{name}</FolderName>
-            <FolderLink>{link.count}개 링크</FolderLink>
-        </Container>
-    );
+  return selected ? (
+    <FocusContainer onClick={onClick}>
+      <FocusFolderName>{name}</FocusFolderName>
+      <FolderLink>{link.count}개 링크</FolderLink>
+      <CheckIcon />
+    </FocusContainer>
+  ) : (
+    <Container onClick={onClick}>
+      <FolderName>{name}</FolderName>
+      <FolderLink>{link.count}개 링크</FolderLink>
+    </Container>
+  );
 }
 
 export default ModalFolderItem;

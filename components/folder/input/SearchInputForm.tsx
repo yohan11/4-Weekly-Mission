@@ -1,8 +1,8 @@
-import React, {useRef, useState} from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import * as Icons from "@/components/sharing/Icons";
 import Button from "@/components/sharing/Button";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 
 const SearchIcon = styled(Icons.Search)`
   position: absolute;
@@ -38,50 +38,49 @@ const StyledIconButton = styled(Button)`
 `;
 
 const SearchInputForm = () => {
-    const router = useRouter();
-    const searchParam = router.query["keyword"];
-    const [searchKeyword, setSearchKeyword] = useState(searchParam || "");
-    const inputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
+  const keyword = router.query["keyword"];
+  const pathname = router.pathname;
+  const [searchKeyword, setSearchKeyword] = useState(keyword || "");
+  const inputRef = useRef<HTMLInputElement>(null);
 
-    const handleSubmit = (e: React.KeyboardEvent) => {
-        if (e.key === 'Enter') {
-            if (typeof window !== 'undefined') {
-                router.push(`/folder?keyword=${searchKeyword}`);
-            }
+  const handleSubmit = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      if (typeof window !== "undefined") {
+        router.push(`${pathname}?keyword=${searchKeyword}`);
+      }
+    }
+  };
 
+  const deleteKeyword = () => {
+    setSearchKeyword("");
+    if (inputRef.current) {
+      inputRef.current.value = "";
+    }
+    router.push(pathname);
+  };
+
+  return (
+    <SearchInputFormContainer>
+      <SearchIcon />
+      <StyledInput
+        type="text"
+        placeholder="링크를 검색해 보세요."
+        defaultValue={searchKeyword || ""}
+        ref={inputRef}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setSearchKeyword(e.target.value)
         }
-    };
+        onKeyDown={(e: React.KeyboardEvent) => handleSubmit(e)}
+      />
 
-    const deleteKeyword = () => {
-        setSearchKeyword("");
-        if (inputRef.current) {
-            inputRef.current.value = "";
-        }
-        router.push('/folder');
-
-    };
-
-    return (
-        <SearchInputFormContainer>
-            <SearchIcon/>
-            <StyledInput
-                type="text"
-                placeholder="링크를 검색해 보세요."
-                defaultValue={searchKeyword || ""}
-                ref={inputRef}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    setSearchKeyword(e.target.value)
-                }
-                onKeyDown={(e: React.KeyboardEvent) => handleSubmit(e)}
-            />
-
-            {searchKeyword ? (
-                <StyledIconButton variant="icon" onClick={deleteKeyword}>
-                    <Icons.Close/>
-                </StyledIconButton>
-            ) : null}
-        </SearchInputFormContainer>
-    );
+      {searchKeyword ? (
+        <StyledIconButton variant="icon" onClick={deleteKeyword}>
+          <Icons.Close />
+        </StyledIconButton>
+      ) : null}
+    </SearchInputFormContainer>
+  );
 };
 
 export default SearchInputForm;

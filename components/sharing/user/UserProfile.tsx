@@ -1,8 +1,9 @@
 import React from "react";
 import Avatar from "@/components/sharing/user/Avatar";
 import styled from "styled-components";
-import {User} from "@/utils/types";
-import {media} from "@/styles/device";
+import { TUserProfile } from "@/utils/types";
+import { media } from "@/styles/device";
+import { AVATAR_DEFAULT_SIZE } from "@/utils/constants";
 
 const ProfileContainer = styled.div`
   display: flex;
@@ -12,31 +13,25 @@ const ProfileContainer = styled.div`
 
 const ProfileText = styled.span`
   color: var(--color--gray4);
-  
+
   @media ${media.mobile} {
     display: none;
   }
 `;
 
-interface UserProfileProps {
-    userInfo: User;
-    className?: string;
-    size?: number;
-}
+const UserProfile = ({ userInfo, className, size }: TUserProfile) => {
+  const avatarImage = userInfo.image_source || undefined;
 
-const UserProfile = ({userInfo, className, size}: UserProfileProps) => {
-    const avatarImage = userInfo["image_source"] || undefined;
-
-    return (
-        <ProfileContainer className={className}>
-            <Avatar
-                avatarImage={avatarImage}
-                width={size || 28}
-                height={size || 28}
-            />
-            <ProfileText>{userInfo["email"]}</ProfileText>
-        </ProfileContainer>
-    );
+  return (
+    <ProfileContainer className={className}>
+      <Avatar
+        avatarImage={avatarImage}
+        width={size || AVATAR_DEFAULT_SIZE}
+        height={size || AVATAR_DEFAULT_SIZE}
+      />
+      <ProfileText>{userInfo.email}</ProfileText>
+    </ProfileContainer>
+  );
 };
 
 export default UserProfile;
