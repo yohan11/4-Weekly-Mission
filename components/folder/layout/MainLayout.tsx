@@ -1,6 +1,7 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import styled from "styled-components";
-import {media} from "@/styles/device";
+import { media } from "@/styles/device";
+import { TChildren } from "@/utils/types";
 
 const Main = styled.main`
   display: flex;
@@ -18,13 +19,11 @@ const Main = styled.main`
   }
   @media ${media.mobile} {
     padding: 4% 32px;
-    gap: 30px;;
+    gap: 30px;
   }
-
-
 `;
-const MainLayout = ({children}: { children: ReactNode }) => {
-    return <Main>{children}</Main>;
+const MainLayout = ({ children }: TChildren) => {
+  return <Main>{children}</Main>;
 };
 
 export default MainLayout;
