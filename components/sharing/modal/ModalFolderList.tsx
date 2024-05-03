@@ -27,7 +27,6 @@ function ModalFolderList() {
     loadFolders();
   }, []);
 
-  if (!folders) return <></>;
   return (
     <FolderList>
       {folders.map((folder: TFolder) => (

@@ -19,21 +19,21 @@ export type TUser = {
   image_source?: string | null;
 };
 
+// export type TFolder = {
+//   id: number;
+//   created_at?: string;
+//   name?: string;
+//   user_id?: number;
+//   favorite?: boolean;
+//   link: { count: number };
+// };
+
 export type TFolder = {
   id: number;
-  created_at?: string;
-  name?: string;
-  user_id?: number;
-  favorite?: boolean;
-  link: { count: number };
-};
-
-export type TSampleFolder = {
-  id: number;
-  name?: string;
-  owner: TUser;
-  links: TLink[];
-  count: number;
+  created_at: string;
+  name: string;
+  user_id: number;
+  favorite: boolean;
 };
 
 export type TLink = {

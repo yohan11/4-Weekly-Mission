@@ -42,30 +42,31 @@ const CardList = ({ links }: { links: TLink[] | undefined }) => {
   //   loadLinks();
   // }, [currentFolder, keyword]);
 
-  if (links?.length === 0) return <NoLink />;
+  if (!links || links?.length === 0) return <NoLink />;
   return (
     <CardListContainer>
-      {links?.map((link) => {
-        const createdAt = link.created_at || link.createdAt;
-        const imageSource = link.image_source || link.imageSource;
+      {links &&
+        links.map((link) => {
+          const createdAt = link.created_at || link.createdAt;
+          const imageSource = link.image_source || link.imageSource;
 
-        const createdDate = new Date(createdAt as string);
-        const currentDate = new Date();
+          const createdDate = new Date(createdAt as string);
+          const currentDate = new Date();
 
-        return (
-          <Card
-            key={link.id}
-            id={link.id}
-            cardImage={imageSource}
-            cardTime={{
-              createdDateString: formatDate(createdDate),
-              timeDifference: getTimeDifference(createdDate, currentDate),
-            }}
-            cardDescription={link.description || ""}
-            cardUrl={link.url}
-          />
-        );
-      })}
+          return (
+            <Card
+              key={link.id}
+              id={link.id}
+              cardImage={imageSource}
+              cardTime={{
+                createdDateString: formatDate(createdDate),
+                timeDifference: getTimeDifference(createdDate, currentDate),
+              }}
+              cardDescription={link.description || ""}
+              cardUrl={link.url}
+            />
+          );
+        })}
     </CardListContainer>
   );
 };
