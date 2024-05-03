@@ -133,7 +133,7 @@ export const getSharedPageData = async (userId: number, folderId: number) => {
     .then((res) => res.data.data);
 };
 
-export const getFolderInfo = async (folderId: number) => {
+export const getFolderInfo = async (folderId: number): Promise<TFolder> => {
   return await axios
     .get(`/folders/${folderId}`, {
       headers: {

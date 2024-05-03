@@ -72,7 +72,17 @@ const FolderAction = styled.div`
   }
 `;
 
-const Folder = () => {
+export function getServerSideProps(context: any) {
+  const { folderId } = context.query;
+
+  return {
+    props: {
+      folderId,
+    },
+  };
+}
+
+const Folder = ({ folderId }: { folderId: number }) => {
   const { openModal, handleModalOpen, handleModalClose } = useModal();
   const { currentFolder } = useFolder();
   const [links, setLinks] = useState<TLink[]>();
@@ -115,7 +125,7 @@ const Folder = () => {
           </SearchMessage>
         ) : null}
         <div className="space-between">
-          <TagList foldersInfo={foldersInfo} />
+          <TagList foldersInfo={foldersInfo} folderId={folderId} />
           <AddFolderButton variant="text" onClick={handleModalOpen}>
             폴더 추가 +
           </AddFolderButton>
