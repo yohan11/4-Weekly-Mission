@@ -15,10 +15,11 @@ import Button from "@/components/sharing/Button";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import { media } from "@/styles/device";
-import { getFolders, getLinks, getUser } from "@/utils/api";
-import { TFolder, TLink, TUser } from "@/utils/types";
+import { getFolders, getLinks } from "@/utils/api";
+import { TFolder, TLink } from "@/utils/types";
 import { useEffect, useState } from "react";
 import CardList from "@/components/folder/card/CardList";
+import { useMyInfo } from "@/contexts/MyInfoContext";
 
 const AddFolderButton = styled(Button)`
   display: flex;
@@ -71,35 +72,29 @@ const FolderAction = styled.div`
   }
 `;
 
-export async function getServerSideProps() {
-  const userInfo = await getUser();
-  const foldersInfo = await getFolders();
-
-  return {
-    props: {
-      userInfo,
-      foldersInfo,
-    },
-  };
-}
-
-const Folder = ({
-  userInfo,
-  foldersInfo,
-}: {
-  userInfo: TUser;
-  foldersInfo: TFolder[];
-}) => {
+const Folder = () => {
   const { openModal, handleModalOpen, handleModalClose } = useModal();
   const { currentFolder } = useFolder();
   const [links, setLinks] = useState<TLink[]>();
   const router = useRouter();
   const keyword = (router.query["keyword"] as string) || null;
+  const [foldersInfo, setFoldersInfo] = useState<TFolder[]>([]);
+  const { myInfo } = useMyInfo();
 
   const loadLinks = async () => {
     const linksInfo = await getLinks(currentFolder.id, keyword);
     setLinks(linksInfo);
   };
+
+  const loadFolders = async () => {
+    const res = await getFolders();
+    setFoldersInfo(res);
+  };
+
+  useEffect(() => {
+    loadFolders();
+    loadLinks();
+  }, []);
 
   useEffect(() => {
     loadLinks();
@@ -107,7 +102,7 @@ const Folder = ({
 
   return (
     <>
-      <Header userInfo={userInfo} fixed={false} />
+      <Header userInfo={myInfo} fixed={false} />
       <FolderHeaderLayout>
         <AddLinkForm />
       </FolderHeaderLayout>

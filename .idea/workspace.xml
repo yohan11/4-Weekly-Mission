@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="resolved conflict">
-      <change afterPath="$PROJECT_DIR$/pages/shared/[folderId].tsx" afterDir="false" />
+    <list default="true" id="4e5353b4-1a6e-4d69-b0cc-8adf18cfaf93" name="Changes" comment="feat: shared 페이지 id에 맞게 렌더링">
+      <change afterPath="$PROJECT_DIR$/contexts/MyInfoContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/folder/[folderId].tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/folder/card/CardList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/folder/card/CardList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sharing/modal/ModalFolderList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sharing/modal/ModalFolderList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/folder/tag/TagList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/folder/tag/TagList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/folder.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shared/[folderId].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shared/[folderId].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signin.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/types.ts" afterDir="false" />
     </list>
@@ -192,15 +195,7 @@
       <workItem from="1714042742691" duration="754000" />
       <workItem from="1714309615170" duration="703000" />
       <workItem from="1714641078026" duration="3896000" />
-      <workItem from="1714702414400" duration="2080000" />
-    </task>
-    <task id="LOCAL-00042" summary="feat: 모달 컴포넌트 수정 및 컴포넌트 리팩토링">
-      <option name="closed" value="true" />
-      <created>1708971242408</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1708971242409</updated>
+      <workItem from="1714702414400" duration="4448000" />
     </task>
     <task id="LOCAL-00043" summary="feat: 상황 별 모달 띄우기 구현">
       <option name="closed" value="true" />
@@ -586,7 +581,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714641296089</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="feat: shared 페이지 id에 맞게 렌더링">
+      <option name="closed" value="true" />
+      <created>1714704535437</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1714704535437</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,7 +608,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="배포 준비" />
     <MESSAGE value="design: 반응형 디자인 개선" />
     <MESSAGE value="feat: 내 유저 정보 클릭 시 /folder로 이동" />
     <MESSAGE value="design: a 태그 글씨 색상 변경" />
@@ -630,6 +632,7 @@
     <MESSAGE value="fix: 폴더 추가 모달 에러 수정" />
     <MESSAGE value="feat: 로그인/회원가입 페이지 접속 시 토큰 있으면 폴더 페이지로 이동" />
     <MESSAGE value="resolved conflict" />
-    <option name="LAST_COMMIT_MESSAGE" value="resolved conflict" />
+    <MESSAGE value="feat: shared 페이지 id에 맞게 렌더링" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: shared 페이지 id에 맞게 렌더링" />
   </component>
 </project>

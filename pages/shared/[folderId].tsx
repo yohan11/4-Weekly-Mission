@@ -1,11 +1,6 @@
 import Footer from "@/components/sharing/Footer";
 import React, { useEffect, useState } from "react";
-import {
-  getFolderInfo,
-  getMyInfo,
-  getSharedPageData,
-  getUser,
-} from "@/utils/api";
+import { getFolderInfo, getSharedPageData, getUser } from "@/utils/api";
 import SearchInputForm from "@/components/folder/input/SearchInputForm";
 import FolderHeaderLayout from "@/components/folder/layout/FolderHeaderLayout";
 import MainLayout from "@/components/folder/layout/MainLayout";
@@ -14,8 +9,9 @@ import { TFolder, TLink, TUser } from "@/utils/types";
 import Header from "@/components/sharing/Header";
 import Avatar from "@/components/sharing/user/Avatar";
 import { useRouter } from "next/router";
-import { SearchMessage } from "@/pages/folder";
+import { SearchMessage } from "@/pages/folder/[folderId]";
 import CardList from "@/components/folder/card/CardList";
+import { useMyInfo } from "@/contexts/MyInfoContext";
 
 export async function getServerSideProps(context: any) {
   const { folderId } = context.query;
@@ -47,7 +43,7 @@ const Index = ({ folderId }: { folderId: number }) => {
   });
   const [ownerId, setOwnerId] = useState<number>(0);
   const [folderOwner, setFolderOwner] = useState<TUser>();
-  const [myInfo, setMyInfo] = useState<TUser>();
+  const { myInfo } = useMyInfo();
 
   const loadFolderInfo = async () => {
     const res = await getFolderInfo(folderId);
@@ -65,11 +61,6 @@ const Index = ({ folderId }: { folderId: number }) => {
     setLinks(res);
   };
 
-  const loadMyInfo = async () => {
-    const res = await getMyInfo();
-    setMyInfo(res);
-  };
-
   // const loadNewLinks = () => {
   //   if (keyword) {
   //     const loweredKeyword = keyword.toLowerCase();
@@ -85,7 +76,6 @@ const Index = ({ folderId }: { folderId: number }) => {
 
   useEffect(() => {
     loadFolderInfo();
-    loadMyInfo();
   }, []);
 
   useEffect(() => {

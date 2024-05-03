@@ -3,10 +3,10 @@ import { TAuth, TFolder, TLink, TToken, TUser } from "@/utils/types";
 import {
   ERROR_400_MESSAGE,
   ERROR_409_MESSAGE,
-  FILTER_LINKS,
   HTTP_ERROR,
   NETWORK_ERROR,
 } from "@/utils/constants";
+import { MyInfo } from "@/contexts/MyInfoContext";
 
 const ACCESS_TOKEN =
   typeof window !== "undefined" ? localStorage.getItem("accessToken") : null;
@@ -23,7 +23,7 @@ export const getUser = async (userId: number): Promise<TUser> => {
     });
 };
 
-export const getMyInfo = async (): Promise<TUser> => {
+export const getMyInfo = async (): Promise<TUser | MyInfo> => {
   return axios
     .get(`/users`, {
       headers: {
@@ -39,25 +39,14 @@ export const getMyInfo = async (): Promise<TUser> => {
     });
 };
 
-export const getSampleFolder = async (): Promise<TSampleFolder> => {
-  return axios
-    .get("/sample/folder")
-    .then((response) => {
-      const responseData = response.data;
-      return responseData.folder;
-    })
-    .catch((error: Error) => {
-      throw HTTP_ERROR(error);
-    });
-};
-
 export const getFolders = async (): Promise<TFolder[]> => {
   return await axios
-    .get("/users/1/folders")
-    .then((response) => {
-      const responseData = response.data;
-      return responseData.data;
+    .get("/folders", {
+      headers: {
+        Authorization: `Bearer ${ACCESS_TOKEN}`,
+      },
     })
+    .then((res) => res.data.data.folder)
     .catch((error: Error) => {
       throw HTTP_ERROR(error);
     });
@@ -67,19 +56,22 @@ export const getLinks = async (
   folderId: number,
   keyword: string | null,
 ): Promise<TLink[] | undefined> => {
-  const URL =
-    folderId === 1 ? `/users/1/links` : `/users/1/links?folderId=${folderId}`;
+  const URL = folderId === 1 ? `/links` : `/links?folderId=${folderId}`;
 
   return axios
-    .get(URL)
+    .get(URL, {
+      headers: {
+        Authorization: `Bearer ${ACCESS_TOKEN}`,
+      },
+    })
     .then((response) => response.data)
     .then((responseData) => {
       const result = responseData.data;
-      if (keyword) {
-        const loweredKeyword = keyword.toLowerCase();
-        return FILTER_LINKS(result, loweredKeyword);
-      }
-      return result;
+      // if (keyword) {
+      //   const loweredKeyword = keyword.toLowerCase();
+      //   return FILTER_LINKS(result, loweredKeyword);
+      // }
+      return result.folder;
     })
     .catch((error: Error) => {
       throw HTTP_ERROR(error);

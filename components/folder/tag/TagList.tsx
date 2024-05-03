@@ -29,7 +29,7 @@ const TagList = ({ foldersInfo }: { foldersInfo: TFolder[] }) => {
       >
         전체
       </Tag>
-      {foldersInfo.length !== 0
+      {foldersInfo
         ? foldersInfo.map((folder) => {
             return (
               <Tag

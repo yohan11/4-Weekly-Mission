@@ -12,12 +12,19 @@ import {
   INPUT_EMAIL_MESSAGE,
   INPUT_PASSWORD_MESSAGE,
 } from "@/utils/constants";
-import { postSignIn } from "@/utils/api";
+import { getMyInfo, postSignIn } from "@/utils/api";
 import { useRouter } from "next/router";
+import { useMyInfo } from "@/contexts/MyInfoContext";
 
 const SignIn = () => {
   const router = useRouter();
   const [loginError, setLoginError] = useState(false);
+  const { setMyInfo } = useMyInfo();
+
+  const loadMyInfo = async () => {
+    const res = await getMyInfo();
+    setMyInfo(res);
+  };
 
   const {
     register,
@@ -31,6 +38,7 @@ const SignIn = () => {
     if (token) {
       localStorage.setItem("accessToken", token.accessToken);
       localStorage.setItem("refreshToken", token.refreshToken);
+      loadMyInfo();
       router.push("/folder");
     } else {
       setLoginError(true);
